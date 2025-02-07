@@ -128,6 +128,54 @@ kaban/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/build
 .PHONY : kaban/fast
 
+src/game.obj: src/game.cpp.obj
+.PHONY : src/game.obj
+
+# target to build an object file
+src/game.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/game.cpp.obj
+.PHONY : src/game.cpp.obj
+
+src/game.i: src/game.cpp.i
+.PHONY : src/game.i
+
+# target to preprocess a source file
+src/game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/game.cpp.i
+.PHONY : src/game.cpp.i
+
+src/game.s: src/game.cpp.s
+.PHONY : src/game.s
+
+# target to generate assembly for a file
+src/game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/game.cpp.s
+.PHONY : src/game.cpp.s
+
+src/input_handler.obj: src/input_handler.cpp.obj
+.PHONY : src/input_handler.obj
+
+# target to build an object file
+src/input_handler.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/input_handler.cpp.obj
+.PHONY : src/input_handler.cpp.obj
+
+src/input_handler.i: src/input_handler.cpp.i
+.PHONY : src/input_handler.i
+
+# target to preprocess a source file
+src/input_handler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/input_handler.cpp.i
+.PHONY : src/input_handler.cpp.i
+
+src/input_handler.s: src/input_handler.cpp.s
+.PHONY : src/input_handler.s
+
+# target to generate assembly for a file
+src/input_handler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/input_handler.cpp.s
+.PHONY : src/input_handler.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -152,6 +200,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/renderer.obj: src/renderer.cpp.obj
+.PHONY : src/renderer.obj
+
+# target to build an object file
+src/renderer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/renderer.cpp.obj
+.PHONY : src/renderer.cpp.obj
+
+src/renderer.i: src/renderer.cpp.i
+.PHONY : src/renderer.i
+
+# target to preprocess a source file
+src/renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/renderer.cpp.i
+.PHONY : src/renderer.cpp.i
+
+src/renderer.s: src/renderer.cpp.s
+.PHONY : src/renderer.s
+
+# target to generate assembly for a file
+src/renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/renderer.cpp.s
+.PHONY : src/renderer.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -161,9 +233,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... kaban
+	@echo ... src/game.obj
+	@echo ... src/game.i
+	@echo ... src/game.s
+	@echo ... src/input_handler.obj
+	@echo ... src/input_handler.i
+	@echo ... src/input_handler.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/renderer.obj
+	@echo ... src/renderer.i
+	@echo ... src/renderer.s
 .PHONY : help
 
 

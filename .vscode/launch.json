@@ -8,9 +8,14 @@
             "program": "${workspaceFolder}/build/kaban.exe",
             "cwd": "${workspaceFolder}",
             "MIMode": "gdb",
+            "externalConsole": true,
             "setupCommands": [
-                { "text": "-enable-pretty-printing", "ignoreFailures": true }
-            ]
+                {
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "CMake: build"
         }
     ]
 }
