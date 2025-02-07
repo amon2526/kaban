@@ -1,0 +1,3 @@
+C:/Users/Ivan/source/code/kaban/build/CMakeFiles/kaban.dir
+C:/Users/Ivan/source/code/kaban/build/CMakeFiles/edit_cache.dir
+C:/Users/Ivan/source/code/kaban/build/CMakeFiles/rebuild_cache.dir
