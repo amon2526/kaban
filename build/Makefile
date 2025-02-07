@@ -128,6 +128,30 @@ kaban/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/build
 .PHONY : kaban/fast
 
+src/board.obj: src/board.cpp.obj
+.PHONY : src/board.obj
+
+# target to build an object file
+src/board.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/board.cpp.obj
+.PHONY : src/board.cpp.obj
+
+src/board.i: src/board.cpp.i
+.PHONY : src/board.i
+
+# target to preprocess a source file
+src/board.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/board.cpp.i
+.PHONY : src/board.cpp.i
+
+src/board.s: src/board.cpp.s
+.PHONY : src/board.s
+
+# target to generate assembly for a file
+src/board.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/board.cpp.s
+.PHONY : src/board.cpp.s
+
 src/game.obj: src/game.cpp.obj
 .PHONY : src/game.obj
 
@@ -233,6 +257,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... kaban
+	@echo ... src/board.obj
+	@echo ... src/board.i
+	@echo ... src/board.s
 	@echo ... src/game.obj
 	@echo ... src/game.i
 	@echo ... src/game.s

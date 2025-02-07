@@ -22,5 +22,11 @@
   "command": "C:\\Programs\\mingw64\\bin\\g++.exe  @CMakeFiles/kaban.dir/includes_CXX.rsp -g -o CMakeFiles\\kaban.dir\\src\\game.cpp.obj -c C:\\Users\\Ivan\\source\\code\\kaban\\src\\game.cpp",
   "file": "C:/Users/Ivan/source/code/kaban/src/game.cpp",
   "output": "CMakeFiles/kaban.dir/src/game.cpp.obj"
+},
+{
+  "directory": "C:/Users/Ivan/source/code/kaban/build",
+  "command": "C:\\Programs\\mingw64\\bin\\g++.exe  @CMakeFiles/kaban.dir/includes_CXX.rsp -g -o CMakeFiles\\kaban.dir\\src\\board.cpp.obj -c C:\\Users\\Ivan\\source\\code\\kaban\\src\\board.cpp",
+  "file": "C:/Users/Ivan/source/code/kaban/src/board.cpp",
+  "output": "CMakeFiles/kaban.dir/src/board.cpp.obj"
 }
 ]

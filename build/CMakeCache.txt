@@ -317,6 +317,9 @@ kaban_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 kaban_SOURCE_DIR:STATIC=C:/Users/Ivan/source/code/kaban
 
+//The directory containing a CMake configuration file for m.
+m_DIR:PATH=m_DIR-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries

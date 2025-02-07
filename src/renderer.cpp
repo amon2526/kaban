@@ -10,8 +10,9 @@ Renderer::~Renderer()
     std::cout << "Renderer destroyed!" << std::endl;
 }
 
-bool Renderer::initialize(int height, const char *title)
+bool Renderer::initialize(int height, const char *title, Game* game)
 {
+    _game = game;
     int width = calculateWindowWidth(height);
     if (!initializeOpenGL(width, height, title))
     {
@@ -75,6 +76,11 @@ void Renderer::render()
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
 
+    if (_game)
+    {
+        //_game.
+    }
+    
     ImGui::Render();
 
     int display_w, display_h;

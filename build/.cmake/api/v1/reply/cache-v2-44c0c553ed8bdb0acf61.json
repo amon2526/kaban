@@ -1720,6 +1720,18 @@
 			],
 			"type" : "STATIC",
 			"value" : "C:/Users/Ivan/source/code/kaban"
+		},
+		{
+			"name" : "m_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for m."
+				}
+			],
+			"type" : "PATH",
+			"value" : "m_DIR-NOTFOUND"
 		}
 	],
 	"kind" : "cache",

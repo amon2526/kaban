@@ -7,7 +7,7 @@ set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
 
 project(kaban)
 
-add_executable(${PROJECT_NAME} src/main.cpp src/input_handler.cpp src/renderer.cpp src/game.cpp) 
+add_executable(${PROJECT_NAME} src/main.cpp src/input_handler.cpp src/renderer.cpp src/game.cpp src/board.cpp) 
 
 target_include_directories(kaban PRIVATE include)
 
@@ -16,4 +16,4 @@ find_package(glfw3 CONFIG REQUIRED)
 find_package(imgui CONFIG REQUIRED)
 find_package(GTest CONFIG REQUIRED)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE OpenGL::GL glfw imgui::imgui GTest::gtest )
+target_link_libraries(${PROJECT_NAME} PRIVATE OpenGL::GL glfw imgui::imgui GTest::gtest)

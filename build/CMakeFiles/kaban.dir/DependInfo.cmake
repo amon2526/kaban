@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/Ivan/source/code/kaban/src/board.cpp" "CMakeFiles/kaban.dir/src/board.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/board.cpp.obj.d"
   "C:/Users/Ivan/source/code/kaban/src/game.cpp" "CMakeFiles/kaban.dir/src/game.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/game.cpp.obj.d"
   "C:/Users/Ivan/source/code/kaban/src/input_handler.cpp" "CMakeFiles/kaban.dir/src/input_handler.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/input_handler.cpp.obj.d"
   "C:/Users/Ivan/source/code/kaban/src/main.cpp" "CMakeFiles/kaban.dir/src/main.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/main.cpp.obj.d"

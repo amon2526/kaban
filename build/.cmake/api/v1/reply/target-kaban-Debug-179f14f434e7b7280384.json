@@ -132,7 +132,8 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4
 			]
 		}
 	],
@@ -202,7 +203,8 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4
 			]
 		}
 	],
@@ -230,6 +232,12 @@
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
 			"path" : "src/game.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/board.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

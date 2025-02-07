@@ -6,6 +6,8 @@
 #include <imgui.h>
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
+#include <game.hpp>
+#include <board.hpp>
 
 class Renderer
 {
@@ -13,7 +15,7 @@ public:
     Renderer();
     ~Renderer();
 
-    bool initialize(int height, const char* title);
+    bool initialize(int height, const char* title, Game* game = NULL);
     bool initializeOpenGL(int width, int height, const char* title);
     bool initializeImgui();
     void render();
@@ -30,6 +32,8 @@ private:
     GLFWmonitor* _monitor;
     GLFWwindow* _window;
     const GLFWvidmode* _mode;
+    
+    Game* _game = NULL;
 
     int _menuWidth = 200;
 

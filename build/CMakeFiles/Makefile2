@@ -84,12 +84,12 @@ clean: CMakeFiles/kaban.dir/clean
 CMakeFiles/kaban.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Ivan\source\code\kaban\build\CMakeFiles --progress-num=1,2,3,4,5 "Built target kaban"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Ivan\source\code\kaban\build\CMakeFiles --progress-num=1,2,3,4,5,6 "Built target kaban"
 .PHONY : CMakeFiles/kaban.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/kaban.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Ivan\source\code\kaban\build\CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Ivan\source\code\kaban\build\CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/kaban.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Ivan\source\code\kaban\build\CMakeFiles 0
 .PHONY : CMakeFiles/kaban.dir/rule
@@ -101,7 +101,7 @@ kaban: CMakeFiles/kaban.dir/rule
 # codegen rule for target.
 CMakeFiles/kaban.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Ivan\source\code\kaban\build\CMakeFiles --progress-num=1,2,3,4,5 "Finished codegen for target kaban"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Ivan\source\code\kaban\build\CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target kaban"
 .PHONY : CMakeFiles/kaban.dir/codegen
 
 # clean rule for target.
