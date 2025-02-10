@@ -2,11 +2,13 @@
 #define BOARD_HPP
 
 #include <cstdint>
-#include <cstring>
 #include <cctype>
+#include <cstring>
+#include <sstream>
 #include <iostream>
 #include <unordered_map>
 #include <cmath>
+#include <userio.hpp>
 
 enum Square : uint8_t
 {
@@ -47,8 +49,8 @@ class Bitboard
 public:
     uint64_t _value;
 
-    Bitboard();
-    Bitboard(uint64_t value);
+    Bitboard() : _value(0ULL) {}
+    Bitboard(uint64_t value) : _value(value) {}
 
     bool isSet(Square square) const;
     void set(Square square);
@@ -58,8 +60,9 @@ public:
 class Board
 {
 public:
-    Board();
-    void loadFEN(char *fen);
+    Board(){};
+    ~Board(){};
+    void loadFEN(std::string fen);
     void set(Square square, Piece piece);
     void unset(Square square);
     

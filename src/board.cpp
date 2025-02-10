@@ -1,8 +1,5 @@
 #include <board.hpp>
 
-Bitboard::Bitboard() : _value(0ULL) {}
-Bitboard::Bitboard(uint64_t value) : _value(value) {}
-
 bool Bitboard::isSet(Square square) const
 {
     return (_value & (1ULL << square)) != 0;
@@ -18,37 +15,47 @@ void Bitboard::unset(Square square)
     _value &= (1ULL << square);
 }
 
-Board::Board() {};
-
-void Board::setPlainBoard(char* board) {
-    if (strlen(board) == 64) {
-        for (int i = 0; i < 64; i++) {
-            if (board[i] != ' ') {
+void Board::setPlainBoard(char *board)
+{
+    if (strlen(board) == 64)
+    {
+        for (int i = 0; i < 64; i++)
+        {
+            if (board[i] != ' ')
+            {
                 set((Square)i, FENtoPiece.at(board[i]));
             }
         }
     }
-    else {
-        std::cerr << "Invalid plain board!\n";
+    else
+    {
+        UserIO::outputError(1, "Invalid plain board!");
     }
 }
 
-char* Board::getPlainBoard() {
-    char* board = new char[65];
+char *Board::getPlainBoard()
+{
+    char *board = new char[65];
 
-    for (int i = 0; i < 64; i++) {
+    for (int i = 0; i < 64; i++)
+    {
         board[i] = ' ';
     }
     board[64] = '\0';
 
-    for (int i = 0; i < 6; i++) {
-        for (int j = 0; j < 64; j++) {
-            if (_white_bitboards[i].isSet((Square)j)) {
+    for (int i = 0; i < 6; i++)
+    {
+        for (int j = 0; j < 64; j++)
+        {
+            if (_white_bitboards[i].isSet((Square)j))
+            {
                 board[j] = PieceToFEN.at((Piece)(i + 1));
             }
         }
-        for (int j = 0; j < 64; j++) {
-            if (_black_bitboards[i].isSet((Square)j)) {
+        for (int j = 0; j < 64; j++)
+        {
+            if (_black_bitboards[i].isSet((Square)j))
+            {
                 board[j] = PieceToFEN.at((Piece)(i + 9));
             }
         }
@@ -57,49 +64,46 @@ char* Board::getPlainBoard() {
     return board;
 }
 
-void Board::loadFEN(char* fen)
+
+void Board::loadFEN(std::string fen)
 {
-    char *fen_copy = strdup(fen);
-    char *argument = strtok(fen_copy, " ");
-
+    std::string fen_copy = fen;
+    std::istringstream iss(fen_copy);
+    std::string argument;
     size_t argument_index = 0;
-
-    while (argument)
-    {
+    while (iss >> argument) {
         switch (argument_index)
         {
         case 0:
         {
-            char *row = strtok(argument, "/");
-            size_t square_index = 0;
-            while (row)
+            std::string board;
+            board.reserve(65);
+
+            for (char c : argument)
             {
-                while (*row)
+                if (c == '/')
                 {
-                    if (isdigit(*row))
-                        square_index += (*row) - '0';
-                    else
-                    {
-                        set((Square)square_index, FENtoPiece.at(*row));
-                        square_index++;
-                    }
-                    row++;
+                    size_t new_position = ceil((float)(board.size() - 1) / 8) * 8;
+                    board.resize(new_position, ' ');
                 }
-                square_index = ceil((float)square_index / 8) * 8;
-                row = strtok(NULL, "/");
+                else if (isdigit(c)) {
+                    size_t new_position = board.size() + (c - '0');
+                    board.resize(new_position, ' ');
+                } 
+                else {
+                    board += c;
+                }
             }
+
+            setPlainBoard(board.data());
             break;
         }
 
         default:
             break;
         }
-
-        argument = strtok(NULL, " ");
         argument_index++;
     }
-
-    free(fen_copy);
 }
 
 void Board::set(Square square, Piece piece)

@@ -8,15 +8,23 @@
 #include <imgui_impl_opengl3.h>
 #include <game.hpp>
 #include <board.hpp>
+#include <input_handler.hpp>
+#include <userio.hpp>
 
 class Renderer
 {
 public:
-    Renderer();
-    ~Renderer();
+    static Renderer& getInstance()
+    {
+        static Renderer instance;
+        return instance;
+    }
 
-    bool initialize(int height, const char* title, Game* game = NULL);
-    bool initializeOpenGL(int width, int height, const char* title);
+    Renderer(const Renderer&) = delete;
+    Renderer& operator=(const Renderer&) = delete;
+
+    bool initialize(int height, const char *title, InputHandler &inputHandler);
+    bool initializeOpenGL(int width, int height, const char *title);
     bool initializeImgui();
     void render();
     void shutdown();
@@ -29,11 +37,14 @@ public:
     GLFWwindow* getWindow() const { return _window; }
 
 private:
-    GLFWmonitor* _monitor;
-    GLFWwindow* _window;
-    const GLFWvidmode* _mode;
-    
-    Game* _game = NULL;
+    Renderer() = default;
+    ~Renderer() = default;
+
+    GLFWmonitor *_monitor;
+    GLFWwindow *_window;
+    const GLFWvidmode *_mode;
+
+    Game *_game = NULL;
 
     int _menuWidth = 200;
 

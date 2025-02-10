@@ -7,7 +7,7 @@ set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
 
 project(kaban)
 
-add_executable(${PROJECT_NAME} src/main.cpp src/input_handler.cpp src/renderer.cpp src/game.cpp src/board.cpp) 
+add_executable(${PROJECT_NAME} src/main.cpp src/renderer.cpp src/game.cpp src/board.cpp) 
 
 target_include_directories(kaban PRIVATE include)
 

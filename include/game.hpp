@@ -8,8 +8,9 @@ class Game
 public:
     Game();
     ~Game();
-    void loadFEN(char *fen);
+    void loadFEN(std::string fen);
     char* getPlainBoard();
+    void setPlainBoard(char* board);
 private:
     Board _board;
 };

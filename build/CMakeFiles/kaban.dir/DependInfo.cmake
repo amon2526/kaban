@@ -10,7 +10,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/Ivan/source/code/kaban/src/board.cpp" "CMakeFiles/kaban.dir/src/board.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/board.cpp.obj.d"
   "C:/Users/Ivan/source/code/kaban/src/game.cpp" "CMakeFiles/kaban.dir/src/game.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/game.cpp.obj.d"
-  "C:/Users/Ivan/source/code/kaban/src/input_handler.cpp" "CMakeFiles/kaban.dir/src/input_handler.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/input_handler.cpp.obj.d"
   "C:/Users/Ivan/source/code/kaban/src/main.cpp" "CMakeFiles/kaban.dir/src/main.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/main.cpp.obj.d"
   "C:/Users/Ivan/source/code/kaban/src/renderer.cpp" "CMakeFiles/kaban.dir/src/renderer.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/renderer.cpp.obj.d"
   )

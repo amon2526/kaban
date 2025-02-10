@@ -176,30 +176,6 @@ src/game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/game.cpp.s
 .PHONY : src/game.cpp.s
 
-src/input_handler.obj: src/input_handler.cpp.obj
-.PHONY : src/input_handler.obj
-
-# target to build an object file
-src/input_handler.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/input_handler.cpp.obj
-.PHONY : src/input_handler.cpp.obj
-
-src/input_handler.i: src/input_handler.cpp.i
-.PHONY : src/input_handler.i
-
-# target to preprocess a source file
-src/input_handler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/input_handler.cpp.i
-.PHONY : src/input_handler.cpp.i
-
-src/input_handler.s: src/input_handler.cpp.s
-.PHONY : src/input_handler.s
-
-# target to generate assembly for a file
-src/input_handler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/input_handler.cpp.s
-.PHONY : src/input_handler.cpp.s
-
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -263,9 +239,6 @@ help:
 	@echo ... src/game.obj
 	@echo ... src/game.i
 	@echo ... src/game.s
-	@echo ... src/input_handler.obj
-	@echo ... src/input_handler.i
-	@echo ... src/input_handler.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

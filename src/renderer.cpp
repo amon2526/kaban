@@ -1,18 +1,8 @@
 #include <renderer.hpp>
 
-Renderer::Renderer() : _window(nullptr), _monitor(nullptr), _mode(nullptr)
-{
-    std::cout << "Renderer created!" << std::endl;
-}
 
-Renderer::~Renderer()
+bool Renderer::initialize(int height, const char* title, InputHandler& inputHandler)
 {
-    std::cout << "Renderer destroyed!" << std::endl;
-}
-
-bool Renderer::initialize(int height, const char *title, Game* game)
-{
-    _game = game;
     int width = calculateWindowWidth(height);
     if (!initializeOpenGL(width, height, title))
     {
@@ -29,31 +19,32 @@ bool Renderer::initializeOpenGL(int width, int height, const char *title)
 {
     if (!glfwInit())
     {
-        return false;
-    }
-
-    glfwWindowHint(GLFW_CLIENT_API, GLFW_OPENGL_API);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    glfwWindowHint(GLFW_SAMPLES, 0);
-
-    glEnable(GL_BLEND);
-    glEnable(GL_LINE_SMOOTH);
-
-    _monitor = glfwGetPrimaryMonitor();
-    _mode = glfwGetVideoMode(_monitor);
-
-    _window = glfwCreateWindow(width, height, title, NULL, NULL);
-
-    if (!_window)
-    {
-        std::cerr << "Failed to create GLFW window!" << std::endl;
+        UserIO::outputError(1, "GLFW init error");
         shutdown();
         return false;
     }
 
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+    _monitor = glfwGetPrimaryMonitor();
+    _mode = glfwGetVideoMode(_monitor);
+    
+    _window = glfwCreateWindow(width, height, title, NULL, NULL);
+
+    if (!_window)
+    {
+        UserIO::outputError(1, "Window creation failed");
+        shutdown();
+        return false;
+    }
+
+    glfwSetErrorCallback(UserIO::outputError);
+    glfwSetKeyCallback(_window, InputHandler::getInstance().keyCallback);
+
     glfwMakeContextCurrent(_window);
+    glfwSwapInterval(1);
 
     return true;
 }
@@ -72,26 +63,30 @@ bool Renderer::initializeImgui()
 
 void Renderer::render()
 {
+    double time = glfwGetTime();
+    
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
 
     if (_game)
     {
-        //_game.
+        char* board = _game->getPlainBoard();
     }
     
     ImGui::Render();
-
+    
     int display_w, display_h;
     glfwGetFramebufferSize(_window, &display_w, &display_h);
     glViewport(0, 0, display_w, display_h);
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glClear(GL_COLOR_BUFFER_BIT);
-
+    
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
     glfwSwapBuffers(_window);
+
+    glfwPollEvents();
 }
 
 void Renderer::shutdown()

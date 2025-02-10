@@ -3,8 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/kaban.dir/src/board.cpp.obj.d"
   "CMakeFiles/kaban.dir/src/game.cpp.obj"
   "CMakeFiles/kaban.dir/src/game.cpp.obj.d"
-  "CMakeFiles/kaban.dir/src/input_handler.cpp.obj"
-  "CMakeFiles/kaban.dir/src/input_handler.cpp.obj.d"
   "CMakeFiles/kaban.dir/src/main.cpp.obj"
   "CMakeFiles/kaban.dir/src/main.cpp.obj.d"
   "CMakeFiles/kaban.dir/src/renderer.cpp.obj"
