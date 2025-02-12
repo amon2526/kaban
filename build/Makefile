@@ -152,6 +152,30 @@ src/board.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/board.cpp.s
 .PHONY : src/board.cpp.s
 
+src/error_bus.obj: src/error_bus.cpp.obj
+.PHONY : src/error_bus.obj
+
+# target to build an object file
+src/error_bus.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/error_bus.cpp.obj
+.PHONY : src/error_bus.cpp.obj
+
+src/error_bus.i: src/error_bus.cpp.i
+.PHONY : src/error_bus.i
+
+# target to preprocess a source file
+src/error_bus.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/error_bus.cpp.i
+.PHONY : src/error_bus.cpp.i
+
+src/error_bus.s: src/error_bus.cpp.s
+.PHONY : src/error_bus.s
+
+# target to generate assembly for a file
+src/error_bus.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/error_bus.cpp.s
+.PHONY : src/error_bus.cpp.s
+
 src/game.obj: src/game.cpp.obj
 .PHONY : src/game.obj
 
@@ -176,6 +200,78 @@ src/game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/game.cpp.s
 .PHONY : src/game.cpp.s
 
+src/glfw_wrapper.obj: src/glfw_wrapper.cpp.obj
+.PHONY : src/glfw_wrapper.obj
+
+# target to build an object file
+src/glfw_wrapper.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/glfw_wrapper.cpp.obj
+.PHONY : src/glfw_wrapper.cpp.obj
+
+src/glfw_wrapper.i: src/glfw_wrapper.cpp.i
+.PHONY : src/glfw_wrapper.i
+
+# target to preprocess a source file
+src/glfw_wrapper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/glfw_wrapper.cpp.i
+.PHONY : src/glfw_wrapper.cpp.i
+
+src/glfw_wrapper.s: src/glfw_wrapper.cpp.s
+.PHONY : src/glfw_wrapper.s
+
+# target to generate assembly for a file
+src/glfw_wrapper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/glfw_wrapper.cpp.s
+.PHONY : src/glfw_wrapper.cpp.s
+
+src/imgui_wrapper.obj: src/imgui_wrapper.cpp.obj
+.PHONY : src/imgui_wrapper.obj
+
+# target to build an object file
+src/imgui_wrapper.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/imgui_wrapper.cpp.obj
+.PHONY : src/imgui_wrapper.cpp.obj
+
+src/imgui_wrapper.i: src/imgui_wrapper.cpp.i
+.PHONY : src/imgui_wrapper.i
+
+# target to preprocess a source file
+src/imgui_wrapper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/imgui_wrapper.cpp.i
+.PHONY : src/imgui_wrapper.cpp.i
+
+src/imgui_wrapper.s: src/imgui_wrapper.cpp.s
+.PHONY : src/imgui_wrapper.s
+
+# target to generate assembly for a file
+src/imgui_wrapper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/imgui_wrapper.cpp.s
+.PHONY : src/imgui_wrapper.cpp.s
+
+src/input_bus.obj: src/input_bus.cpp.obj
+.PHONY : src/input_bus.obj
+
+# target to build an object file
+src/input_bus.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/input_bus.cpp.obj
+.PHONY : src/input_bus.cpp.obj
+
+src/input_bus.i: src/input_bus.cpp.i
+.PHONY : src/input_bus.i
+
+# target to preprocess a source file
+src/input_bus.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/input_bus.cpp.i
+.PHONY : src/input_bus.cpp.i
+
+src/input_bus.s: src/input_bus.cpp.s
+.PHONY : src/input_bus.s
+
+# target to generate assembly for a file
+src/input_bus.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/input_bus.cpp.s
+.PHONY : src/input_bus.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -199,6 +295,30 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/message_bus.obj: src/message_bus.cpp.obj
+.PHONY : src/message_bus.obj
+
+# target to build an object file
+src/message_bus.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/message_bus.cpp.obj
+.PHONY : src/message_bus.cpp.obj
+
+src/message_bus.i: src/message_bus.cpp.i
+.PHONY : src/message_bus.i
+
+# target to preprocess a source file
+src/message_bus.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/message_bus.cpp.i
+.PHONY : src/message_bus.cpp.i
+
+src/message_bus.s: src/message_bus.cpp.s
+.PHONY : src/message_bus.s
+
+# target to generate assembly for a file
+src/message_bus.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/message_bus.cpp.s
+.PHONY : src/message_bus.cpp.s
 
 src/renderer.obj: src/renderer.cpp.obj
 .PHONY : src/renderer.obj
@@ -236,12 +356,27 @@ help:
 	@echo ... src/board.obj
 	@echo ... src/board.i
 	@echo ... src/board.s
+	@echo ... src/error_bus.obj
+	@echo ... src/error_bus.i
+	@echo ... src/error_bus.s
 	@echo ... src/game.obj
 	@echo ... src/game.i
 	@echo ... src/game.s
+	@echo ... src/glfw_wrapper.obj
+	@echo ... src/glfw_wrapper.i
+	@echo ... src/glfw_wrapper.s
+	@echo ... src/imgui_wrapper.obj
+	@echo ... src/imgui_wrapper.i
+	@echo ... src/imgui_wrapper.s
+	@echo ... src/input_bus.obj
+	@echo ... src/input_bus.i
+	@echo ... src/input_bus.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/message_bus.obj
+	@echo ... src/message_bus.i
+	@echo ... src/message_bus.s
 	@echo ... src/renderer.obj
 	@echo ... src/renderer.i
 	@echo ... src/renderer.s

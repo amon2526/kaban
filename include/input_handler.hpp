@@ -1,39 +1,27 @@
 #ifndef INPUT_HANDLER_HPP
 #define INPUT_HANDLER_HPP
 
-#include <event_bus.hpp>
 #include <GLFW/glfw3.h>
-#include <iostream>
+#include <message_bus.hpp>
 
-class InputHandler
-{
+/*class InputHandler {
 public:
-    static InputHandler &getInstance()
-    {
-        static InputHandler instance;
-        return instance;
-    }
+  static InputHandler &getInstance();
 
-    InputHandler(const InputHandler &) = delete;
-    InputHandler &operator=(const InputHandler &) = delete;
+  InputHandler(const InputHandler &) = delete;
+  InputHandler(InputHandler &&) = delete;
+  InputHandler &operator=(const InputHandler &) = delete;
+  InputHandler &operator=(InputHandler &&) = delete;
 
-    static void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods)
-    {
-        if (action == GLFW_PRESS)
-        {
-            InputEvent event;
-            event.type = EventType::KeyDown;
-            event.key = key;
-            getInstance()._eventBus.publish(event);
-        }
-    }
+  static void keyCallback(GLFWwindow *window, int key, int scancode, int action,
+                          int mods);
 
 private:
-    InputHandler() = default;
-    ~InputHandler() = default;
+  InputHandler() = default;
+  ~InputHandler() = default;
 
-    EventBus _eventBus;
+  EventBus _eventBus;
 };
+*/
 
 #endif
-

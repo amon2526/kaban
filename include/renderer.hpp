@@ -1,54 +1,47 @@
 #ifndef RENDERER_HPP
 #define RENDERER_HPP
 
-#include <GLFW/glfw3.h>
-#include <iostream>
-#include <imgui.h>
-#include <imgui_impl_glfw.h>
-#include <imgui_impl_opengl3.h>
-#include <game.hpp>
 #include <board.hpp>
-#include <input_handler.hpp>
-#include <userio.hpp>
+#include <game.hpp>
+#include <glfw_wrapper.hpp>
+#include <imgui_wrapper.hpp>
 
-class Renderer
-{
+class Renderer {
 public:
-    static Renderer& getInstance()
-    {
-        static Renderer instance;
-        return instance;
-    }
+  Renderer() = default;
+  ~Renderer() = default;
 
-    Renderer(const Renderer&) = delete;
-    Renderer& operator=(const Renderer&) = delete;
+  bool initGraphics(int height, const char *title);
 
-    bool initialize(int height, const char *title, InputHandler &inputHandler);
-    bool initializeOpenGL(int width, int height, const char *title);
-    bool initializeImgui();
-    void render();
-    void shutdown();
+  void render();
+  void shutdown();
 
-    void showDemoWindow();
-    bool windowShouldClose();
-    void toggleDemoWindow();
-    int calculateWindowWidth(int height) const { return height + _menuWidth; };
+  void newFrame();
+  void finishFrame();
+  void fillFrame(double r = 0, double g = 0, double b = 0, double a = 1);
+  bool windowShouldClose();
+  void toggleDemoWindow();
+  void updateTime();
+  int calculateWindowWidth(int height);
+  void hookErrorCallback();
+  ImVec2 GetWindowPosition(const char* windowName) {
+    ImGuiWindow* window = ImGui::FindWindowByName(windowName);
+    return window ? window->Pos : ImVec2(-1, -1); // Return (-1, -1) if not found
+}
 
-    GLFWwindow* getWindow() const { return _window; }
-
+ImVec2 GetWindowSize(const char* windowName) {
+    ImGuiWindow* window = ImGui::FindWindowByName(windowName);
+    return window ? window->Size : ImVec2(-1, -1); // Return (-1, -1) if not found
+}
 private:
-    Renderer() = default;
-    ~Renderer() = default;
+  GLFWWrapper m_glfw;
+  IMGUIWrapper m_imgui;
 
-    GLFWmonitor *_monitor;
-    GLFWwindow *_window;
-    const GLFWvidmode *_mode;
-
-    Game *_game = NULL;
-
-    int _menuWidth = 200;
-
-    bool _showDemoWindow = false;
+  int lastTime = 0;
+  int deltaTime = 0;
+  int currentTime = 0;
+  int m_menuWidth = 200;
+  bool m_showDemoWindow = true;
 };
 
 #endif

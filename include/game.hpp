@@ -3,16 +3,16 @@
 
 #include <board.hpp>
 
-class Game
-{
+class Game {
 public:
-    Game();
-    ~Game();
-    void loadFEN(std::string fen);
-    char* getPlainBoard();
-    void setPlainBoard(char* board);
+  Game();
+  ~Game();
+  void loadFEN(std::string fen);
+  char *getPlainBoard();
+  void setPlainBoard(char *board);
+
 private:
-    Board _board;
+  Board _board;
 };
 
 #endif

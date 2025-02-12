@@ -9,8 +9,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/Ivan/source/code/kaban/src/board.cpp" "CMakeFiles/kaban.dir/src/board.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/board.cpp.obj.d"
+  "C:/Users/Ivan/source/code/kaban/src/error_bus.cpp" "CMakeFiles/kaban.dir/src/error_bus.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/error_bus.cpp.obj.d"
   "C:/Users/Ivan/source/code/kaban/src/game.cpp" "CMakeFiles/kaban.dir/src/game.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/game.cpp.obj.d"
+  "C:/Users/Ivan/source/code/kaban/src/glfw_wrapper.cpp" "CMakeFiles/kaban.dir/src/glfw_wrapper.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/glfw_wrapper.cpp.obj.d"
+  "C:/Users/Ivan/source/code/kaban/src/imgui_wrapper.cpp" "CMakeFiles/kaban.dir/src/imgui_wrapper.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/imgui_wrapper.cpp.obj.d"
+  "C:/Users/Ivan/source/code/kaban/src/input_bus.cpp" "CMakeFiles/kaban.dir/src/input_bus.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/input_bus.cpp.obj.d"
   "C:/Users/Ivan/source/code/kaban/src/main.cpp" "CMakeFiles/kaban.dir/src/main.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/main.cpp.obj.d"
+  "C:/Users/Ivan/source/code/kaban/src/message_bus.cpp" "CMakeFiles/kaban.dir/src/message_bus.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/message_bus.cpp.obj.d"
   "C:/Users/Ivan/source/code/kaban/src/renderer.cpp" "CMakeFiles/kaban.dir/src/renderer.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/renderer.cpp.obj.d"
   )
 

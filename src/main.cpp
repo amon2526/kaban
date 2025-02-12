@@ -1,24 +1,24 @@
-#include <iostream>
-#include <renderer.hpp>
-#include <input_handler.hpp>
+#include <error_bus.hpp>
+#include <input_bus.hpp>
 #include <game.hpp>
-#include <userio.hpp>
 
-int main (int argc, char* argv[]) {
+#include <renderer.hpp>
 
-    Game game;
+int main(int argc, char *argv[]) {
 
-    Renderer& renderer = Renderer::getInstance();
-    InputHandler& input_handler = InputHandler::getInstance();
+  Game game;
+  Renderer renderer;
 
-    renderer.initialize(480, "Kaban", input_handler);
+  renderer.initGraphics(480, "Kaban");
 
-    game.loadFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
+  game.loadFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
 
-    while (!renderer.windowShouldClose()) {
-        renderer.render();
-    }
-    renderer.shutdown();
+  while (!renderer.windowShouldClose()) {
+    ErrorBus::getInstance().notify();
+    InputBus::getInstance().notify();
+    renderer.render();
+  }
+  renderer.shutdown();
 
-    return 0;
+  return 0;
 }

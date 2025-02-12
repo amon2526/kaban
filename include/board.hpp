@@ -2,13 +2,8 @@
 #define BOARD_HPP
 
 #include <cstdint>
-#include <cctype>
-#include <cstring>
-#include <sstream>
-#include <iostream>
 #include <unordered_map>
-#include <cmath>
-#include <userio.hpp>
+#include <error_bus.hpp>
 
 enum Square : uint8_t
 {
@@ -66,7 +61,7 @@ public:
     void set(Square square, Piece piece);
     void unset(Square square);
     
-    void setPlainBoard(char* board);
+    void setPlainBoard(const char* board);
     char* getPlainBoard();
 
 private:

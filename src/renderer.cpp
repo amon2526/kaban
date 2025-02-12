@@ -1,115 +1,72 @@
+#include <GLFW/glfw3.h>
+#include <error_bus.hpp>
 #include <renderer.hpp>
 
+bool Renderer::initGraphics(int height, const char *title) {
+  int width = calculateWindowWidth(height);
+  if (!m_glfw.init(width, height, title) || !m_imgui.init(m_glfw.getWindow())) {
+    shutdown();
+    ErrorBus::getInstance().sendError(1, "Failed to init graphics");
+    return false;
+  }
+  updateTime();
 
-bool Renderer::initialize(int height, const char* title, InputHandler& inputHandler)
-{
-    int width = calculateWindowWidth(height);
-    if (!initializeOpenGL(width, height, title))
-    {
-        return false;
-    }
-    if (!initializeImgui())
-    {
-        return false;
-    }
-    return true;
+  return true;
 };
 
-bool Renderer::initializeOpenGL(int width, int height, const char *title)
-{
-    if (!glfwInit())
-    {
-        UserIO::outputError(1, "GLFW init error");
-        shutdown();
-        return false;
-    }
+void Renderer::render() {
 
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+  updateTime();
 
-    _monitor = glfwGetPrimaryMonitor();
-    _mode = glfwGetVideoMode(_monitor);
-    
-    _window = glfwCreateWindow(width, height, title, NULL, NULL);
+  newFrame();
+  fillFrame();
 
-    if (!_window)
-    {
-        UserIO::outputError(1, "Window creation failed");
-        shutdown();
-        return false;
-    }
+  if (m_showDemoWindow) {
+    m_imgui.showDemoWindow();
+  }
 
-    glfwSetErrorCallback(UserIO::outputError);
-    glfwSetKeyCallback(_window, InputHandler::getInstance().keyCallback);
+  m_imgui.keepWindowInBounds("Dear ImGui Demo");
 
-    glfwMakeContextCurrent(_window);
-    glfwSwapInterval(1);
+  if (ImGui::Begin("My Panel")) {
+    ImGui::Text("This window cannot go outside!");
+  }
+  ImGui::End();
 
-    return true;
+
+  // if (_game) {
+  //   char *board = _game->getPlainBoard();
+  // }
+
+  finishFrame();
 }
 
-bool Renderer::initializeImgui()
-{
-    IMGUI_CHECKVERSION();
-    ImGui::CreateContext();
-    ImGuiIO &io = ImGui::GetIO();
-    (void)io;
-    ImGui::StyleColorsDark();
-    ImGui_ImplGlfw_InitForOpenGL(_window, true);
-    ImGui_ImplOpenGL3_Init("#version 150");
-    return true;
+void Renderer::shutdown() {
+  m_imgui.shutdown();
+  m_glfw.shutdown();
 }
 
-void Renderer::render()
-{
-    double time = glfwGetTime();
-    
-    ImGui_ImplOpenGL3_NewFrame();
-    ImGui_ImplGlfw_NewFrame();
-    ImGui::NewFrame();
+bool Renderer::windowShouldClose() { return m_glfw.windowShouldClose(); }
 
-    if (_game)
-    {
-        char* board = _game->getPlainBoard();
-    }
-    
-    ImGui::Render();
-    
-    int display_w, display_h;
-    glfwGetFramebufferSize(_window, &display_w, &display_h);
-    glViewport(0, 0, display_w, display_h);
-    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
-    
-    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+void Renderer::toggleDemoWindow() { m_showDemoWindow = !m_showDemoWindow; }
 
-    glfwSwapBuffers(_window);
+int Renderer::calculateWindowWidth(int height) { return m_menuWidth + height; }
 
-    glfwPollEvents();
+void Renderer::newFrame() {
+  m_glfw.newFrame();
+  m_imgui.newFrame();
 }
 
-void Renderer::shutdown()
-{
-    if (_window)
-    {
-        glfwDestroyWindow(_window);
-        _window = nullptr;
-    }
-    glfwTerminate();
+void Renderer::finishFrame() {
+  m_imgui.finishFrame();
+  m_glfw.finishFrame();
 }
 
-bool Renderer::windowShouldClose()
-{
-    return glfwWindowShouldClose(_window);
+void Renderer::updateTime() {
+  currentTime = m_glfw.getTime();
+  deltaTime = currentTime - lastTime;
+  lastTime = currentTime;
 }
 
-void Renderer::toggleDemoWindow()
-{
-    _showDemoWindow = !_showDemoWindow;
-}
-
-void Renderer::showDemoWindow()
-{
-    ImGui::ShowDemoWindow(&_showDemoWindow);
+void Renderer::fillFrame(double r, double g, double b, double a) {
+  m_glfw.fillFrame(r, g, b, a);
 }

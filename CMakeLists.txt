@@ -4,10 +4,12 @@ set(CMAKE_TOOLCHAIN_FILE "D:/Programs/VisualStudio/vcpkg/scripts/buildsystems/vc
 set(CMAKE_PREFIX_PATH "D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/share")
 set(VCPKG_TARGET_TRIPLET "x64-mingw-static" CACHE STRING "Vcpkg triplet")
 set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(kaban)
 
-add_executable(${PROJECT_NAME} src/main.cpp src/renderer.cpp src/game.cpp src/board.cpp) 
+add_executable(${PROJECT_NAME} src/board.cpp src/error_bus.cpp src/game.cpp src/glfw_wrapper.cpp src/imgui_wrapper.cpp src/input_bus.cpp src/main.cpp src/message_bus.cpp src/renderer.cpp) 
 
 target_include_directories(kaban PRIVATE include)
 
