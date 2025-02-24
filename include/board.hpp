@@ -62,13 +62,15 @@ public:
     void unset(Square square);
     
     void setPlainBoard(const char* board);
-    char* getPlainBoard();
+    char* getPlainBoard() const;
+
+    Piece getPiece(Square square) const;
 
 private:
-    Bitboard _white_bitboards[7];
-    Bitboard _black_bitboards[7];
-    Bitboard _occupied;
-    bool _white_to_move;
+    Bitboard m_white_bitboards[7];
+    Bitboard m_black_bitboards[7];
+    Bitboard m_occupied;
+    bool m_white_to_move;
 };
 
 #endif

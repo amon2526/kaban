@@ -25,7 +25,7 @@ void Board::setPlainBoard(const char *board) {
   }
 }
 
-char *Board::getPlainBoard() {
+char *Board::getPlainBoard() const {
   char *board = new char[65];
 
   for (int i = 0; i < 64; i++) {
@@ -35,12 +35,12 @@ char *Board::getPlainBoard() {
 
   for (int i = 0; i < 6; i++) {
     for (int j = 0; j < 64; j++) {
-      if (_white_bitboards[i].isSet((Square)j)) {
+      if (m_white_bitboards[i].isSet((Square)j)) {
         board[j] = PieceToFEN.at((Piece)(i + 1));
       }
     }
     for (int j = 0; j < 64; j++) {
-      if (_black_bitboards[i].isSet((Square)j)) {
+      if (m_black_bitboards[i].isSet((Square)j)) {
         board[j] = PieceToFEN.at((Piece)(i + 9));
       }
     }
@@ -88,19 +88,48 @@ void Board::set(Square square, Piece piece) {
     return;
 
   if (piece / 8 == 0) {
-    _white_bitboards[(piece - 1)].set(square);
-    _white_bitboards[OCCUPIED].set(square);
+    m_white_bitboards[(piece - 1)].set(square);
+    m_white_bitboards[OCCUPIED].set(square);
   } else {
-    _black_bitboards[(piece - 9)].set(square);
-    _black_bitboards[OCCUPIED].set(square);
+    m_black_bitboards[(piece - 9)].set(square);
+    m_black_bitboards[OCCUPIED].set(square);
   }
-  _occupied.set(square);
+  m_occupied.set(square);
 }
 
 void Board::unset(Square square) {
   for (int i = 0; i < 7; i++) {
-    _white_bitboards[i].unset(square);
-    _black_bitboards[i].unset(square);
+    m_white_bitboards[i].unset(square);
+    m_black_bitboards[i].unset(square);
   }
-  _occupied.unset(square);
+  m_occupied.unset(square);
+}
+
+Piece Board::getPiece(Square square) const {
+  if (m_white_bitboards[PAWNS].isSet(square))
+    return WPawn;
+  else if (m_white_bitboards[KNIGHTS].isSet(square))
+    return WKnight;
+  else if (m_white_bitboards[BISHOPS].isSet(square)) 
+    return WBishop;
+  else if (m_white_bitboards[ROOKS].isSet(square))
+    return WRook;
+  else if (m_white_bitboards[QUEENS].isSet(square))
+    return WQueen;
+  else if (m_white_bitboards[KINGS].isSet(square))
+    return WKing;
+  else if (m_black_bitboards[PAWNS].isSet(square))
+    return BPawn;
+  else if (m_black_bitboards[KNIGHTS].isSet(square))
+    return BKnight;
+  else if (m_black_bitboards[BISHOPS].isSet(square))
+    return BBishop;
+  else if (m_black_bitboards[ROOKS].isSet(square))
+    return BRook;
+  else if (m_black_bitboards[QUEENS].isSet(square))
+    return BQueen;
+  else if (m_black_bitboards[KINGS].isSet(square))
+    return BKing;
+
+  return EMPTY;
 }

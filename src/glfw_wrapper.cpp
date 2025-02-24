@@ -25,7 +25,7 @@ bool GLFWWrapper::init(int width, int height, const char *title) {
     shutdown();
     return false;
   }
-
+  
   glfwMakeContextCurrent(m_window);
   glfwSwapInterval(1);
 

@@ -1,17 +1,13 @@
 #ifndef RENDERER_HPP
 #define RENDERER_HPP
 
+#include "layout_manager.hpp"
 #include <GLFW/glfw3.h>
 #include <board.hpp>
 #include <game.hpp>
 #include <glfw_wrapper.hpp>
 #include <imgui_wrapper.hpp>
 #include <unordered_map>
-
-struct Sector {
-  int x, y;
-  int width, height;
-};
 
 class Renderer {
 public:
@@ -31,19 +27,21 @@ public:
   void toggleDemoWindow();
   bool windowShouldClose();
   void hookUpGame(Game *game);
+  
+  LayoutManager* getLayoutManager();
 
   bool loadTextures();
-  void drawBoard(const std::string& board, const Sector& sector);
+  void drawGame(const GameState &gameState);
   void drawSquare(int x, int y, int width, int height, float r, float g, float b);
   void drawImage(int x, int y, int width, int height, GLuint texture);
 
 private:
-  Game *m_game = nullptr;
+  LayoutManager m_layoutManager;
+
+  Game *m_game;
   GLFWwindow* window;
   GLFWWrapper m_glfw;
   IMGUIWrapper m_imgui;
-
-  Sector sectorDivision[2];
 
   std::unordered_map<char, GLuint> pieceTextures;
 
@@ -51,7 +49,7 @@ private:
   int m_deltaTime = 0;
   int m_currentTime = 0;
   int m_menuWidth = 200;
-  bool m_showDemoWindow = true;
+  bool m_showDemoWindow = false;
 };
 
 #endif

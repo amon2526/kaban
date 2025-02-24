@@ -1,7 +1,7 @@
-
-#include "game.hpp"
+#include "layout_manager.hpp"
 #include <GLFW/glfw3.h>
 #include <error_handler.hpp>
+#include <game.hpp>
 #include <gl/gl.h>
 #include <imgui.h>
 #include <renderer.hpp>
@@ -11,7 +11,10 @@
 bool Renderer::init(int height, const char *title) {
   int width = (float)5 * height / 3;
 
-  updateSectors(width, height);
+  m_layoutManager.defineSector("interface", 0, 0, ((float)2 / 5) * width,
+                               height);
+  m_layoutManager.defineSector("game", ((float)2 / 5) * width, 0,
+                               ((float)3 / 5) * width, height);
 
   if (!m_glfw.init(width, height, title) || !m_imgui.init(m_glfw.getWindow()) ||
       !loadTextures()) {
@@ -26,30 +29,69 @@ bool Renderer::init(int height, const char *title) {
 };
 
 void Renderer::render() {
-  
+
+  GameState gameState = m_game->getGameState();
+
   updateTime();
-  
+
   newFrame();
   fillFrame();
 
   glClear(GL_COLOR_BUFFER_BIT);
 
-  // Set up an orthographic projection
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity();
   glOrtho(0, 1000, 0, 600, -1, 1);
 
-  drawSquare(100, 100, 200, 200, 1, 1, 1);
-  
+  ImGui::SetNextWindowSize(
+      ImVec2(m_layoutManager.getSector("interface").width,
+             m_layoutManager.getSector("interface").height));
+  ImGui::SetNextWindowPos(ImVec2(m_layoutManager.getSector("interface").x,
+                                 m_layoutManager.getSector("interface").y));
+  ImGui::Begin("Game", nullptr,
+               ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove |
+                   ImGuiWindowFlags_NoCollapse);
+  ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 10);
+  ImGui::Text("Hello, welcome to the Kaban!");
+  ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 10);
+  if (ImGui::Button("Start a new game")) {
+    if (m_game) {
+      m_game->loadFEN(
+          "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
+    }
+  }
+  ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 10);
+  ImGui::Separator();
+  ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 10);
+  ImGui::Text("Current turn: %s", gameState.turn == WHITE ? "White" : "Black");
+  ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 10);
+  std::string selectedPieceStr = "None";
+  if (gameState.selectedPiece != SQ_NONE) {
+    std::string ranks[] = {"A", "B", "C", "D", "E", "F", "G", "H"};
+    int row = gameState.selectedPiece / 8;
+    int col = gameState.selectedPiece % 8;
+    selectedPieceStr = ranks[col] + std::to_string(8 - row);
+  }
+  ImGui::Text("Selected piece: %s", selectedPieceStr.c_str());
+  ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 10);
+  std::string attachedPieceStr = "None";
+  if (gameState.attachedPiece != SQ_NONE) {
+    std::string ranks[] = {"A", "B", "C", "D", "E", "F", "G", "H"};
+    int row = gameState.attachedPiece / 8;
+    int col = gameState.attachedPiece % 8;
+    attachedPieceStr = ranks[col] + std::to_string(8 - row);
+  }
+  ImGui::Text("Attached piece: %s", attachedPieceStr.c_str());
+  ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 10);
+  ImGui::End();
+
+  if (m_game) {
+    drawGame(gameState);
+  }
+
   if (m_showDemoWindow) {
     m_imgui.showDemoWindow();
     m_imgui.keepWindowInBounds("Dear ImGui Demo");
-  }
-
-  if (m_game) {
-    char *board = m_game->getPlainBoard();
-
-    drawBoard(std::string(board), sectorDivision[1]);
   }
 
   finishFrame();
@@ -63,18 +105,6 @@ void Renderer::shutdown() {
 bool Renderer::windowShouldClose() { return m_glfw.windowShouldClose(); }
 
 void Renderer::toggleDemoWindow() { m_showDemoWindow = !m_showDemoWindow; }
-
-void Renderer::updateSectors(int width, int height) {
-  sectorDivision[0].x = 0;
-  sectorDivision[0].y = 0;
-  sectorDivision[0].width = ((float)2 / 5) * width;
-  sectorDivision[0].height = height;
-
-  sectorDivision[1].x = ((float)2 / 5) * width;
-  sectorDivision[1].y = 0;
-  sectorDivision[1].width = ((float)3 / 5) * width;
-  sectorDivision[1].height = height;
-}
 
 void Renderer::newFrame() {
   m_glfw.newFrame();
@@ -118,23 +148,35 @@ bool Renderer::loadTextures() {
   return true;
 }
 
-void Renderer::drawBoard(const std::string &board, const Sector &sector) {
+void Renderer::drawGame(const GameState &gameState) {
   glClear(GL_COLOR_BUFFER_BIT);
 
-  int squareSize = sector.width / 8;
+  Sector boardSector = m_layoutManager.getSector("game");
+  int squareSize = boardSector.width / 8;
 
-  drawSquare(100, 100, 200, 200, 1, 1, 1);
+  for (int boardRow = 0; boardRow < 8; boardRow++) {
+    for (int boardCol = 0; boardCol < 8; boardCol++) {
+      int turnRow = (gameState.turn == WHITE) ? boardRow : 7 - boardRow;
+      int turnCol = (gameState.turn == WHITE) ? boardCol : 7 - boardCol;
 
-  for (int row = 0; row < 8; row++) {
-    for (int col = 0; col < 8; col++) {
-      bool isDark = (row + col) % 2 != 0;
-      drawSquare(row * squareSize + sector.x, col * squareSize, squareSize,
-                 squareSize, isDark ? 0.2 : 0.8, isDark ? 0.2 : 0.8,
-                 isDark ? 0.2 : 0.8);
-      char piece = board[row * 8 + col];
+      bool isDark = ((turnRow + turnCol) % 2 == 0);
+
+      int xPos = boardSector.x + turnCol * squareSize;
+      int yPos = boardSector.y + turnRow * squareSize;
+
+      float colorValue = isDark ? 0.2f : 0.8f;
+      drawSquare(xPos, yPos, squareSize, squareSize, colorValue, colorValue,
+                 colorValue);
+
+      if ((7 -turnRow) * 8 + turnCol == gameState.selectedPiece) {
+        drawSquare(xPos, yPos, squareSize, squareSize, 0, 1, 0);
+      }
+
+      int index = (7 - boardRow) * 8 + boardCol;
+      char piece = gameState.plainBoard[index];
+
       if (piece != ' ') {
-        drawImage(row * squareSize + sector.x, col * squareSize, squareSize,
-                  squareSize, pieceTextures[piece]);
+        drawImage(xPos, yPos, squareSize, squareSize, pieceTextures[piece]);
       }
     }
   }
@@ -167,3 +209,5 @@ void Renderer::drawImage(int x, int y, int width, int height, GLuint texture) {
   glEnd();
   glDisable(GL_TEXTURE_2D);
 }
+
+LayoutManager *Renderer::getLayoutManager() { return &m_layoutManager; }

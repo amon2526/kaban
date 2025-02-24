@@ -1096,6 +1096,7 @@ CMakeFiles/kaban.dir/src/input_handler.cpp.obj: C:/Users/Ivan/source/code/kaban/
   C:/Users/Ivan/source/code/kaban/include/glfw_wrapper.hpp \
   C:/Users/Ivan/source/code/kaban/include/imgui_wrapper.hpp \
   C:/Users/Ivan/source/code/kaban/include/input_handler.hpp \
+  C:/Users/Ivan/source/code/kaban/include/layout_manager.hpp \
   C:/Users/Ivan/source/code/kaban/include/renderer.hpp \
   D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/include/GLFW/glfw3.h \
   D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/include/imconfig.h \
@@ -1345,6 +1346,7 @@ CMakeFiles/kaban.dir/src/main.cpp.obj: C:/Users/Ivan/source/code/kaban/src/main.
   C:/Users/Ivan/source/code/kaban/include/glfw_wrapper.hpp \
   C:/Users/Ivan/source/code/kaban/include/imgui_wrapper.hpp \
   C:/Users/Ivan/source/code/kaban/include/input_handler.hpp \
+  C:/Users/Ivan/source/code/kaban/include/layout_manager.hpp \
   C:/Users/Ivan/source/code/kaban/include/renderer.hpp \
   D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/include/GLFW/glfw3.h \
   D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/include/imconfig.h \
@@ -1594,6 +1596,7 @@ CMakeFiles/kaban.dir/src/renderer.cpp.obj: C:/Users/Ivan/source/code/kaban/src/r
   C:/Users/Ivan/source/code/kaban/include/game.hpp \
   C:/Users/Ivan/source/code/kaban/include/glfw_wrapper.hpp \
   C:/Users/Ivan/source/code/kaban/include/imgui_wrapper.hpp \
+  C:/Users/Ivan/source/code/kaban/include/layout_manager.hpp \
   C:/Users/Ivan/source/code/kaban/include/renderer.hpp \
   C:/Users/Ivan/source/code/kaban/include/texture_loader.hpp \
   D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/include/GLFW/glfw3.h \
@@ -2691,6 +2694,10 @@ C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/pstl/execution
 
 C:/Users/Ivan/source/code/kaban/src/input_handler.cpp:
 
+C:/Programs/mingw64/x86_64-w64-mingw32/include/psdk_inc/intrin-impl.h:
+
+C:/Users/Ivan/source/code/kaban/include/layout_manager.hpp:
+
 C:/Programs/mingw64/x86_64-w64-mingw32/include/psdk_inc/_socket_types.h:
 
 C:/Users/Ivan/source/code/kaban/include/renderer.hpp:
@@ -2798,8 +2805,6 @@ C:/Programs/mingw64/x86_64-w64-mingw32/include/wtypes.h:
 C:/Programs/mingw64/x86_64-w64-mingw32/include/psdk_inc/_wsa_errnos.h:
 
 C:/Programs/mingw64/x86_64-w64-mingw32/include/psdk_inc/_wsadata.h:
-
-C:/Programs/mingw64/x86_64-w64-mingw32/include/psdk_inc/intrin-impl.h:
 
 C:/Programs/mingw64/x86_64-w64-mingw32/include/pshpack1.h:
 

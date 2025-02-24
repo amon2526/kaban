@@ -1102,6 +1102,7 @@ CMakeFiles/kaban.dir/src/input_handler.cpp.obj
  C:/Users/Ivan/source/code/kaban/include/glfw_wrapper.hpp
  C:/Users/Ivan/source/code/kaban/include/imgui_wrapper.hpp
  C:/Users/Ivan/source/code/kaban/include/input_handler.hpp
+ C:/Users/Ivan/source/code/kaban/include/layout_manager.hpp
  C:/Users/Ivan/source/code/kaban/include/renderer.hpp
  D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/include/GLFW/glfw3.h
  D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/include/imconfig.h
@@ -1352,6 +1353,7 @@ CMakeFiles/kaban.dir/src/main.cpp.obj
  C:/Users/Ivan/source/code/kaban/include/glfw_wrapper.hpp
  C:/Users/Ivan/source/code/kaban/include/imgui_wrapper.hpp
  C:/Users/Ivan/source/code/kaban/include/input_handler.hpp
+ C:/Users/Ivan/source/code/kaban/include/layout_manager.hpp
  C:/Users/Ivan/source/code/kaban/include/renderer.hpp
  D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/include/GLFW/glfw3.h
  D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/include/imconfig.h
@@ -1602,6 +1604,7 @@ CMakeFiles/kaban.dir/src/renderer.cpp.obj
  C:/Users/Ivan/source/code/kaban/include/game.hpp
  C:/Users/Ivan/source/code/kaban/include/glfw_wrapper.hpp
  C:/Users/Ivan/source/code/kaban/include/imgui_wrapper.hpp
+ C:/Users/Ivan/source/code/kaban/include/layout_manager.hpp
  C:/Users/Ivan/source/code/kaban/include/renderer.hpp
  C:/Users/Ivan/source/code/kaban/include/texture_loader.hpp
  D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/include/GLFW/glfw3.h
