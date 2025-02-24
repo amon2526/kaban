@@ -7,9 +7,9 @@
 },
 {
   "directory": "C:/Users/Ivan/source/code/kaban/build",
-  "command": "C:\\Programs\\mingw64\\bin\\g++.exe  @CMakeFiles/kaban.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\kaban.dir\\src\\error_bus.cpp.obj -c C:\\Users\\Ivan\\source\\code\\kaban\\src\\error_bus.cpp",
-  "file": "C:/Users/Ivan/source/code/kaban/src/error_bus.cpp",
-  "output": "CMakeFiles/kaban.dir/src/error_bus.cpp.obj"
+  "command": "C:\\Programs\\mingw64\\bin\\g++.exe  @CMakeFiles/kaban.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\kaban.dir\\src\\error_handler.cpp.obj -c C:\\Users\\Ivan\\source\\code\\kaban\\src\\error_handler.cpp",
+  "file": "C:/Users/Ivan/source/code/kaban/src/error_handler.cpp",
+  "output": "CMakeFiles/kaban.dir/src/error_handler.cpp.obj"
 },
 {
   "directory": "C:/Users/Ivan/source/code/kaban/build",
@@ -31,9 +31,9 @@
 },
 {
   "directory": "C:/Users/Ivan/source/code/kaban/build",
-  "command": "C:\\Programs\\mingw64\\bin\\g++.exe  @CMakeFiles/kaban.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\kaban.dir\\src\\input_bus.cpp.obj -c C:\\Users\\Ivan\\source\\code\\kaban\\src\\input_bus.cpp",
-  "file": "C:/Users/Ivan/source/code/kaban/src/input_bus.cpp",
-  "output": "CMakeFiles/kaban.dir/src/input_bus.cpp.obj"
+  "command": "C:\\Programs\\mingw64\\bin\\g++.exe  @CMakeFiles/kaban.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\kaban.dir\\src\\input_handler.cpp.obj -c C:\\Users\\Ivan\\source\\code\\kaban\\src\\input_handler.cpp",
+  "file": "C:/Users/Ivan/source/code/kaban/src/input_handler.cpp",
+  "output": "CMakeFiles/kaban.dir/src/input_handler.cpp.obj"
 },
 {
   "directory": "C:/Users/Ivan/source/code/kaban/build",
@@ -43,14 +43,14 @@
 },
 {
   "directory": "C:/Users/Ivan/source/code/kaban/build",
-  "command": "C:\\Programs\\mingw64\\bin\\g++.exe  @CMakeFiles/kaban.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\kaban.dir\\src\\message_bus.cpp.obj -c C:\\Users\\Ivan\\source\\code\\kaban\\src\\message_bus.cpp",
-  "file": "C:/Users/Ivan/source/code/kaban/src/message_bus.cpp",
-  "output": "CMakeFiles/kaban.dir/src/message_bus.cpp.obj"
-},
-{
-  "directory": "C:/Users/Ivan/source/code/kaban/build",
   "command": "C:\\Programs\\mingw64\\bin\\g++.exe  @CMakeFiles/kaban.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\kaban.dir\\src\\renderer.cpp.obj -c C:\\Users\\Ivan\\source\\code\\kaban\\src\\renderer.cpp",
   "file": "C:/Users/Ivan/source/code/kaban/src/renderer.cpp",
   "output": "CMakeFiles/kaban.dir/src/renderer.cpp.obj"
+},
+{
+  "directory": "C:/Users/Ivan/source/code/kaban/build",
+  "command": "C:\\Programs\\mingw64\\bin\\g++.exe  @CMakeFiles/kaban.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\kaban.dir\\src\\texture_loader.cpp.obj -c C:\\Users\\Ivan\\source\\code\\kaban\\src\\texture_loader.cpp",
+  "file": "C:/Users/Ivan/source/code/kaban/src/texture_loader.cpp",
+  "output": "CMakeFiles/kaban.dir/src/texture_loader.cpp.obj"
 }
 ]

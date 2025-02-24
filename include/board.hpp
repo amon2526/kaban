@@ -2,8 +2,8 @@
 #define BOARD_HPP
 
 #include <cstdint>
+#include <string>
 #include <unordered_map>
-#include <error_bus.hpp>
 
 enum Square : uint8_t
 {

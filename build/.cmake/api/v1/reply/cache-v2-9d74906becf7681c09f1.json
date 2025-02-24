@@ -1350,6 +1350,18 @@
 			"value" : "[opengl32][c ][v()]"
 		},
 		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Stb",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding Stb"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/include][v()]"
+		},
+		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Threads",
 			"properties" : 
 			[
@@ -1404,6 +1416,22 @@
 			],
 			"type" : "STRING",
 			"value" : "glu32"
+		},
+		{
+			"name" : "Stb_INCLUDE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/include"
 		},
 		{
 			"name" : "VCPKG_APPLOCAL_DEPS",

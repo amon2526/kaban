@@ -9,13 +9,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(kaban)
 
-add_executable(${PROJECT_NAME} src/board.cpp src/error_bus.cpp src/game.cpp src/glfw_wrapper.cpp src/imgui_wrapper.cpp src/input_bus.cpp src/main.cpp src/message_bus.cpp src/renderer.cpp) 
+add_executable(${PROJECT_NAME} src/board.cpp src/error_handler.cpp src/game.cpp src/glfw_wrapper.cpp src/imgui_wrapper.cpp src/input_handler.cpp src/main.cpp src/renderer.cpp src/texture_loader.cpp) 
 
 target_include_directories(kaban PRIVATE include)
+target_include_directories(kaban PRIVATE "D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/include")
 
 find_package(OpenGL REQUIRED)
 find_package(glfw3 CONFIG REQUIRED)
 find_package(imgui CONFIG REQUIRED)
 find_package(GTest CONFIG REQUIRED)
+find_package(Stb REQUIRED)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE OpenGL::GL glfw imgui::imgui GTest::gtest)

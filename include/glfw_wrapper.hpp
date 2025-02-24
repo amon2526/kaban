@@ -10,12 +10,15 @@ public:
   bool init(int width, int height, const char *title);
   void shutdown();
   bool windowShouldClose();
+  void setWindowShouldClose(bool value);
   void updateDimensions();
   int getTime();
   void newFrame();
   void finishFrame();
   void fillFrame(double r, double g, double b, double a);
-  GLFWwindow *getWindow() const { return m_window; }
+  GLFWwindow *getWindow() const;
+
+
 
 private:
   GLFWwindow *m_window;

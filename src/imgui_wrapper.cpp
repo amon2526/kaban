@@ -1,5 +1,4 @@
 #include <algorithm>
-#include <error_bus.hpp>
 #include <imgui_internal.h>
 #include <imgui_wrapper.hpp>
 #include <string>

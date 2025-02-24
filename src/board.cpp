@@ -1,7 +1,8 @@
 #include <board.hpp>
 #include <sstream>
-#include <cstring>
 #include <cmath>
+#include <cstring>
+#include <error_handler.hpp>
 
 bool Bitboard::isSet(Square square) const {
   return (_value & (1ULL << square)) != 0;
@@ -19,7 +20,7 @@ void Board::setPlainBoard(const char *board) {
       }
     }
   } else {
-    ErrorBus::getInstance().sendError(
+    handleError(
         0, "Cannot set a board: invalid board passed");
   }
 }

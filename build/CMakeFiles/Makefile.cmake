@@ -48,6 +48,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/CMake/share/cmake-3.31/Modules/Platform/Windows-windres.cmake"
   "C:/Program Files/CMake/share/cmake-3.31/Modules/Platform/Windows.cmake"
   "C:/Program Files/CMake/share/cmake-3.31/Modules/Platform/WindowsPaths.cmake"
+  "C:/Program Files/CMake/share/cmake-3.31/Modules/SelectLibraryConfigurations.cmake"
   "C:/Users/Ivan/source/code/kaban/CMakeLists.txt"
   "CMakeFiles/3.31.5/CMakeCCompiler.cmake"
   "CMakeFiles/3.31.5/CMakeCXXCompiler.cmake"
@@ -67,6 +68,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/share/imgui/imgui-targets-debug.cmake"
   "D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/share/imgui/imgui-targets-release.cmake"
   "D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/share/imgui/imgui-targets.cmake"
+  "D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/share/stb/FindStb.cmake"
+  "D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/share/stb/vcpkg-cmake-wrapper.cmake"
   "D:/Programs/VisualStudio/vcpkg/scripts/buildsystems/vcpkg.cmake"
   )
 

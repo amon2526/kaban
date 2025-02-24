@@ -1,27 +1,21 @@
 #ifndef INPUT_HANDLER_HPP
 #define INPUT_HANDLER_HPP
 
+#include <game.hpp>
+#include <renderer.hpp>
 #include <GLFW/glfw3.h>
-#include <message_bus.hpp>
 
-/*class InputHandler {
+class InputHandler {
 public:
-  static InputHandler &getInstance();
-
-  InputHandler(const InputHandler &) = delete;
-  InputHandler(InputHandler &&) = delete;
-  InputHandler &operator=(const InputHandler &) = delete;
-  InputHandler &operator=(InputHandler &&) = delete;
-
-  static void keyCallback(GLFWwindow *window, int key, int scancode, int action,
-                          int mods);
-
+  InputHandler(Renderer* renderer, Game* game) : m_renderer(renderer), m_game(game) {};
+  void update();
+  void handleInput();
 private:
-  InputHandler() = default;
-  ~InputHandler() = default;
+Renderer* m_renderer;
+Game* m_game;
 
-  EventBus _eventBus;
+bool m_prevLMB = false;
+bool m_prevRMB = false;
 };
-*/
 
 #endif

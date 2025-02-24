@@ -86,20 +86,20 @@ CMakeFiles/kaban.dir/src/board.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kaban.dir/src/board.cpp.s"
 	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Ivan\source\code\kaban\src\board.cpp -o CMakeFiles\kaban.dir\src\board.cpp.s
 
-CMakeFiles/kaban.dir/src/error_bus.cpp.obj: CMakeFiles/kaban.dir/flags.make
-CMakeFiles/kaban.dir/src/error_bus.cpp.obj: CMakeFiles/kaban.dir/includes_CXX.rsp
-CMakeFiles/kaban.dir/src/error_bus.cpp.obj: C:/Users/Ivan/source/code/kaban/src/error_bus.cpp
-CMakeFiles/kaban.dir/src/error_bus.cpp.obj: CMakeFiles/kaban.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Ivan\source\code\kaban\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/kaban.dir/src/error_bus.cpp.obj"
-	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kaban.dir/src/error_bus.cpp.obj -MF CMakeFiles\kaban.dir\src\error_bus.cpp.obj.d -o CMakeFiles\kaban.dir\src\error_bus.cpp.obj -c C:\Users\Ivan\source\code\kaban\src\error_bus.cpp
+CMakeFiles/kaban.dir/src/error_handler.cpp.obj: CMakeFiles/kaban.dir/flags.make
+CMakeFiles/kaban.dir/src/error_handler.cpp.obj: CMakeFiles/kaban.dir/includes_CXX.rsp
+CMakeFiles/kaban.dir/src/error_handler.cpp.obj: C:/Users/Ivan/source/code/kaban/src/error_handler.cpp
+CMakeFiles/kaban.dir/src/error_handler.cpp.obj: CMakeFiles/kaban.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Ivan\source\code\kaban\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/kaban.dir/src/error_handler.cpp.obj"
+	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kaban.dir/src/error_handler.cpp.obj -MF CMakeFiles\kaban.dir\src\error_handler.cpp.obj.d -o CMakeFiles\kaban.dir\src\error_handler.cpp.obj -c C:\Users\Ivan\source\code\kaban\src\error_handler.cpp
 
-CMakeFiles/kaban.dir/src/error_bus.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/kaban.dir/src/error_bus.cpp.i"
-	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Ivan\source\code\kaban\src\error_bus.cpp > CMakeFiles\kaban.dir\src\error_bus.cpp.i
+CMakeFiles/kaban.dir/src/error_handler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/kaban.dir/src/error_handler.cpp.i"
+	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Ivan\source\code\kaban\src\error_handler.cpp > CMakeFiles\kaban.dir\src\error_handler.cpp.i
 
-CMakeFiles/kaban.dir/src/error_bus.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kaban.dir/src/error_bus.cpp.s"
-	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Ivan\source\code\kaban\src\error_bus.cpp -o CMakeFiles\kaban.dir\src\error_bus.cpp.s
+CMakeFiles/kaban.dir/src/error_handler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kaban.dir/src/error_handler.cpp.s"
+	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Ivan\source\code\kaban\src\error_handler.cpp -o CMakeFiles\kaban.dir\src\error_handler.cpp.s
 
 CMakeFiles/kaban.dir/src/game.cpp.obj: CMakeFiles/kaban.dir/flags.make
 CMakeFiles/kaban.dir/src/game.cpp.obj: CMakeFiles/kaban.dir/includes_CXX.rsp
@@ -146,20 +146,20 @@ CMakeFiles/kaban.dir/src/imgui_wrapper.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kaban.dir/src/imgui_wrapper.cpp.s"
 	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Ivan\source\code\kaban\src\imgui_wrapper.cpp -o CMakeFiles\kaban.dir\src\imgui_wrapper.cpp.s
 
-CMakeFiles/kaban.dir/src/input_bus.cpp.obj: CMakeFiles/kaban.dir/flags.make
-CMakeFiles/kaban.dir/src/input_bus.cpp.obj: CMakeFiles/kaban.dir/includes_CXX.rsp
-CMakeFiles/kaban.dir/src/input_bus.cpp.obj: C:/Users/Ivan/source/code/kaban/src/input_bus.cpp
-CMakeFiles/kaban.dir/src/input_bus.cpp.obj: CMakeFiles/kaban.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Ivan\source\code\kaban\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/kaban.dir/src/input_bus.cpp.obj"
-	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kaban.dir/src/input_bus.cpp.obj -MF CMakeFiles\kaban.dir\src\input_bus.cpp.obj.d -o CMakeFiles\kaban.dir\src\input_bus.cpp.obj -c C:\Users\Ivan\source\code\kaban\src\input_bus.cpp
+CMakeFiles/kaban.dir/src/input_handler.cpp.obj: CMakeFiles/kaban.dir/flags.make
+CMakeFiles/kaban.dir/src/input_handler.cpp.obj: CMakeFiles/kaban.dir/includes_CXX.rsp
+CMakeFiles/kaban.dir/src/input_handler.cpp.obj: C:/Users/Ivan/source/code/kaban/src/input_handler.cpp
+CMakeFiles/kaban.dir/src/input_handler.cpp.obj: CMakeFiles/kaban.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Ivan\source\code\kaban\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/kaban.dir/src/input_handler.cpp.obj"
+	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kaban.dir/src/input_handler.cpp.obj -MF CMakeFiles\kaban.dir\src\input_handler.cpp.obj.d -o CMakeFiles\kaban.dir\src\input_handler.cpp.obj -c C:\Users\Ivan\source\code\kaban\src\input_handler.cpp
 
-CMakeFiles/kaban.dir/src/input_bus.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/kaban.dir/src/input_bus.cpp.i"
-	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Ivan\source\code\kaban\src\input_bus.cpp > CMakeFiles\kaban.dir\src\input_bus.cpp.i
+CMakeFiles/kaban.dir/src/input_handler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/kaban.dir/src/input_handler.cpp.i"
+	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Ivan\source\code\kaban\src\input_handler.cpp > CMakeFiles\kaban.dir\src\input_handler.cpp.i
 
-CMakeFiles/kaban.dir/src/input_bus.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kaban.dir/src/input_bus.cpp.s"
-	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Ivan\source\code\kaban\src\input_bus.cpp -o CMakeFiles\kaban.dir\src\input_bus.cpp.s
+CMakeFiles/kaban.dir/src/input_handler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kaban.dir/src/input_handler.cpp.s"
+	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Ivan\source\code\kaban\src\input_handler.cpp -o CMakeFiles\kaban.dir\src\input_handler.cpp.s
 
 CMakeFiles/kaban.dir/src/main.cpp.obj: CMakeFiles/kaban.dir/flags.make
 CMakeFiles/kaban.dir/src/main.cpp.obj: CMakeFiles/kaban.dir/includes_CXX.rsp
@@ -176,26 +176,11 @@ CMakeFiles/kaban.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kaban.dir/src/main.cpp.s"
 	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Ivan\source\code\kaban\src\main.cpp -o CMakeFiles\kaban.dir\src\main.cpp.s
 
-CMakeFiles/kaban.dir/src/message_bus.cpp.obj: CMakeFiles/kaban.dir/flags.make
-CMakeFiles/kaban.dir/src/message_bus.cpp.obj: CMakeFiles/kaban.dir/includes_CXX.rsp
-CMakeFiles/kaban.dir/src/message_bus.cpp.obj: C:/Users/Ivan/source/code/kaban/src/message_bus.cpp
-CMakeFiles/kaban.dir/src/message_bus.cpp.obj: CMakeFiles/kaban.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Ivan\source\code\kaban\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/kaban.dir/src/message_bus.cpp.obj"
-	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kaban.dir/src/message_bus.cpp.obj -MF CMakeFiles\kaban.dir\src\message_bus.cpp.obj.d -o CMakeFiles\kaban.dir\src\message_bus.cpp.obj -c C:\Users\Ivan\source\code\kaban\src\message_bus.cpp
-
-CMakeFiles/kaban.dir/src/message_bus.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/kaban.dir/src/message_bus.cpp.i"
-	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Ivan\source\code\kaban\src\message_bus.cpp > CMakeFiles\kaban.dir\src\message_bus.cpp.i
-
-CMakeFiles/kaban.dir/src/message_bus.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kaban.dir/src/message_bus.cpp.s"
-	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Ivan\source\code\kaban\src\message_bus.cpp -o CMakeFiles\kaban.dir\src\message_bus.cpp.s
-
 CMakeFiles/kaban.dir/src/renderer.cpp.obj: CMakeFiles/kaban.dir/flags.make
 CMakeFiles/kaban.dir/src/renderer.cpp.obj: CMakeFiles/kaban.dir/includes_CXX.rsp
 CMakeFiles/kaban.dir/src/renderer.cpp.obj: C:/Users/Ivan/source/code/kaban/src/renderer.cpp
 CMakeFiles/kaban.dir/src/renderer.cpp.obj: CMakeFiles/kaban.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Ivan\source\code\kaban\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/kaban.dir/src/renderer.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Ivan\source\code\kaban\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/kaban.dir/src/renderer.cpp.obj"
 	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kaban.dir/src/renderer.cpp.obj -MF CMakeFiles\kaban.dir\src\renderer.cpp.obj.d -o CMakeFiles\kaban.dir\src\renderer.cpp.obj -c C:\Users\Ivan\source\code\kaban\src\renderer.cpp
 
 CMakeFiles/kaban.dir/src/renderer.cpp.i: cmake_force
@@ -206,30 +191,45 @@ CMakeFiles/kaban.dir/src/renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kaban.dir/src/renderer.cpp.s"
 	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Ivan\source\code\kaban\src\renderer.cpp -o CMakeFiles\kaban.dir\src\renderer.cpp.s
 
+CMakeFiles/kaban.dir/src/texture_loader.cpp.obj: CMakeFiles/kaban.dir/flags.make
+CMakeFiles/kaban.dir/src/texture_loader.cpp.obj: CMakeFiles/kaban.dir/includes_CXX.rsp
+CMakeFiles/kaban.dir/src/texture_loader.cpp.obj: C:/Users/Ivan/source/code/kaban/src/texture_loader.cpp
+CMakeFiles/kaban.dir/src/texture_loader.cpp.obj: CMakeFiles/kaban.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Ivan\source\code\kaban\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/kaban.dir/src/texture_loader.cpp.obj"
+	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/kaban.dir/src/texture_loader.cpp.obj -MF CMakeFiles\kaban.dir\src\texture_loader.cpp.obj.d -o CMakeFiles\kaban.dir\src\texture_loader.cpp.obj -c C:\Users\Ivan\source\code\kaban\src\texture_loader.cpp
+
+CMakeFiles/kaban.dir/src/texture_loader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/kaban.dir/src/texture_loader.cpp.i"
+	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Ivan\source\code\kaban\src\texture_loader.cpp > CMakeFiles\kaban.dir\src\texture_loader.cpp.i
+
+CMakeFiles/kaban.dir/src/texture_loader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/kaban.dir/src/texture_loader.cpp.s"
+	C:\Programs\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Ivan\source\code\kaban\src\texture_loader.cpp -o CMakeFiles\kaban.dir\src\texture_loader.cpp.s
+
 # Object files for target kaban
 kaban_OBJECTS = \
 "CMakeFiles/kaban.dir/src/board.cpp.obj" \
-"CMakeFiles/kaban.dir/src/error_bus.cpp.obj" \
+"CMakeFiles/kaban.dir/src/error_handler.cpp.obj" \
 "CMakeFiles/kaban.dir/src/game.cpp.obj" \
 "CMakeFiles/kaban.dir/src/glfw_wrapper.cpp.obj" \
 "CMakeFiles/kaban.dir/src/imgui_wrapper.cpp.obj" \
-"CMakeFiles/kaban.dir/src/input_bus.cpp.obj" \
+"CMakeFiles/kaban.dir/src/input_handler.cpp.obj" \
 "CMakeFiles/kaban.dir/src/main.cpp.obj" \
-"CMakeFiles/kaban.dir/src/message_bus.cpp.obj" \
-"CMakeFiles/kaban.dir/src/renderer.cpp.obj"
+"CMakeFiles/kaban.dir/src/renderer.cpp.obj" \
+"CMakeFiles/kaban.dir/src/texture_loader.cpp.obj"
 
 # External object files for target kaban
 kaban_EXTERNAL_OBJECTS =
 
 kaban.exe: CMakeFiles/kaban.dir/src/board.cpp.obj
-kaban.exe: CMakeFiles/kaban.dir/src/error_bus.cpp.obj
+kaban.exe: CMakeFiles/kaban.dir/src/error_handler.cpp.obj
 kaban.exe: CMakeFiles/kaban.dir/src/game.cpp.obj
 kaban.exe: CMakeFiles/kaban.dir/src/glfw_wrapper.cpp.obj
 kaban.exe: CMakeFiles/kaban.dir/src/imgui_wrapper.cpp.obj
-kaban.exe: CMakeFiles/kaban.dir/src/input_bus.cpp.obj
+kaban.exe: CMakeFiles/kaban.dir/src/input_handler.cpp.obj
 kaban.exe: CMakeFiles/kaban.dir/src/main.cpp.obj
-kaban.exe: CMakeFiles/kaban.dir/src/message_bus.cpp.obj
 kaban.exe: CMakeFiles/kaban.dir/src/renderer.cpp.obj
+kaban.exe: CMakeFiles/kaban.dir/src/texture_loader.cpp.obj
 kaban.exe: CMakeFiles/kaban.dir/build.make
 kaban.exe: D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/debug/lib/libglfw3.a
 kaban.exe: D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/debug/lib/libimguid.a

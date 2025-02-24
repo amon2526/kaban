@@ -152,29 +152,29 @@ src/board.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/board.cpp.s
 .PHONY : src/board.cpp.s
 
-src/error_bus.obj: src/error_bus.cpp.obj
-.PHONY : src/error_bus.obj
+src/error_handler.obj: src/error_handler.cpp.obj
+.PHONY : src/error_handler.obj
 
 # target to build an object file
-src/error_bus.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/error_bus.cpp.obj
-.PHONY : src/error_bus.cpp.obj
+src/error_handler.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/error_handler.cpp.obj
+.PHONY : src/error_handler.cpp.obj
 
-src/error_bus.i: src/error_bus.cpp.i
-.PHONY : src/error_bus.i
+src/error_handler.i: src/error_handler.cpp.i
+.PHONY : src/error_handler.i
 
 # target to preprocess a source file
-src/error_bus.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/error_bus.cpp.i
-.PHONY : src/error_bus.cpp.i
+src/error_handler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/error_handler.cpp.i
+.PHONY : src/error_handler.cpp.i
 
-src/error_bus.s: src/error_bus.cpp.s
-.PHONY : src/error_bus.s
+src/error_handler.s: src/error_handler.cpp.s
+.PHONY : src/error_handler.s
 
 # target to generate assembly for a file
-src/error_bus.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/error_bus.cpp.s
-.PHONY : src/error_bus.cpp.s
+src/error_handler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/error_handler.cpp.s
+.PHONY : src/error_handler.cpp.s
 
 src/game.obj: src/game.cpp.obj
 .PHONY : src/game.obj
@@ -248,29 +248,29 @@ src/imgui_wrapper.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/imgui_wrapper.cpp.s
 .PHONY : src/imgui_wrapper.cpp.s
 
-src/input_bus.obj: src/input_bus.cpp.obj
-.PHONY : src/input_bus.obj
+src/input_handler.obj: src/input_handler.cpp.obj
+.PHONY : src/input_handler.obj
 
 # target to build an object file
-src/input_bus.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/input_bus.cpp.obj
-.PHONY : src/input_bus.cpp.obj
+src/input_handler.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/input_handler.cpp.obj
+.PHONY : src/input_handler.cpp.obj
 
-src/input_bus.i: src/input_bus.cpp.i
-.PHONY : src/input_bus.i
+src/input_handler.i: src/input_handler.cpp.i
+.PHONY : src/input_handler.i
 
 # target to preprocess a source file
-src/input_bus.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/input_bus.cpp.i
-.PHONY : src/input_bus.cpp.i
+src/input_handler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/input_handler.cpp.i
+.PHONY : src/input_handler.cpp.i
 
-src/input_bus.s: src/input_bus.cpp.s
-.PHONY : src/input_bus.s
+src/input_handler.s: src/input_handler.cpp.s
+.PHONY : src/input_handler.s
 
 # target to generate assembly for a file
-src/input_bus.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/input_bus.cpp.s
-.PHONY : src/input_bus.cpp.s
+src/input_handler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/input_handler.cpp.s
+.PHONY : src/input_handler.cpp.s
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
@@ -296,30 +296,6 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/message_bus.obj: src/message_bus.cpp.obj
-.PHONY : src/message_bus.obj
-
-# target to build an object file
-src/message_bus.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/message_bus.cpp.obj
-.PHONY : src/message_bus.cpp.obj
-
-src/message_bus.i: src/message_bus.cpp.i
-.PHONY : src/message_bus.i
-
-# target to preprocess a source file
-src/message_bus.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/message_bus.cpp.i
-.PHONY : src/message_bus.cpp.i
-
-src/message_bus.s: src/message_bus.cpp.s
-.PHONY : src/message_bus.s
-
-# target to generate assembly for a file
-src/message_bus.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/message_bus.cpp.s
-.PHONY : src/message_bus.cpp.s
-
 src/renderer.obj: src/renderer.cpp.obj
 .PHONY : src/renderer.obj
 
@@ -344,6 +320,30 @@ src/renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/renderer.cpp.s
 .PHONY : src/renderer.cpp.s
 
+src/texture_loader.obj: src/texture_loader.cpp.obj
+.PHONY : src/texture_loader.obj
+
+# target to build an object file
+src/texture_loader.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/texture_loader.cpp.obj
+.PHONY : src/texture_loader.cpp.obj
+
+src/texture_loader.i: src/texture_loader.cpp.i
+.PHONY : src/texture_loader.i
+
+# target to preprocess a source file
+src/texture_loader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/texture_loader.cpp.i
+.PHONY : src/texture_loader.cpp.i
+
+src/texture_loader.s: src/texture_loader.cpp.s
+.PHONY : src/texture_loader.s
+
+# target to generate assembly for a file
+src/texture_loader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/texture_loader.cpp.s
+.PHONY : src/texture_loader.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -356,9 +356,9 @@ help:
 	@echo ... src/board.obj
 	@echo ... src/board.i
 	@echo ... src/board.s
-	@echo ... src/error_bus.obj
-	@echo ... src/error_bus.i
-	@echo ... src/error_bus.s
+	@echo ... src/error_handler.obj
+	@echo ... src/error_handler.i
+	@echo ... src/error_handler.s
 	@echo ... src/game.obj
 	@echo ... src/game.i
 	@echo ... src/game.s
@@ -368,18 +368,18 @@ help:
 	@echo ... src/imgui_wrapper.obj
 	@echo ... src/imgui_wrapper.i
 	@echo ... src/imgui_wrapper.s
-	@echo ... src/input_bus.obj
-	@echo ... src/input_bus.i
-	@echo ... src/input_bus.s
+	@echo ... src/input_handler.obj
+	@echo ... src/input_handler.i
+	@echo ... src/input_handler.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
-	@echo ... src/message_bus.obj
-	@echo ... src/message_bus.i
-	@echo ... src/message_bus.s
 	@echo ... src/renderer.obj
 	@echo ... src/renderer.i
 	@echo ... src/renderer.s
+	@echo ... src/texture_loader.obj
+	@echo ... src/texture_loader.i
+	@echo ... src/texture_loader.s
 .PHONY : help
 
 

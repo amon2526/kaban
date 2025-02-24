@@ -351,6 +351,29 @@
 		{
 			"isExternal" : true,
 			"path" : "D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/share/gtest/GTestTargets-release.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/share/stb/vcpkg-cmake-wrapper.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/share/stb/FindStb.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.31/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.31/Modules/SelectLibraryConfigurations.cmake"
 		}
 	],
 	"kind" : "cmakeFiles",

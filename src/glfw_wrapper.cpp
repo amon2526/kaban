@@ -1,34 +1,30 @@
 #include <GLFW/glfw3.h>
-#include <error_bus.hpp>
+#include <error_handler.hpp>
 #include <glfw_wrapper.hpp>
 #include <imgui.h>
-#include <input_bus.hpp>
+#include <imgui_internal.h>
 
 bool GLFWWrapper::init(int width, int height, const char *title) {
-  glfwSetErrorCallback(ErrorBus::getInstance().glfwErrorCallback);
+  glfwSetErrorCallback(errorCallback);
 
   if (!glfwInit()) {
-    ErrorBus::getInstance().sendError(0, "Failed to initialize GLFW");
+    handleError(0, "Failed to initialize GLFW");
     shutdown();
     return false;
   }
 
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-  glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
+  glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+  
   m_monitor = glfwGetPrimaryMonitor();
   m_mode = glfwGetVideoMode(m_monitor);
 
   m_window = glfwCreateWindow(width, height, title, NULL, NULL);
 
   if (!m_window) {
-    ErrorBus::getInstance().sendError(0, "Failed to initialize a window");
+    handleError(0, "Failed to initialize a window");
     shutdown();
     return false;
   }
-
-  glfwSetKeyCallback(m_window, InputBus::getInstance().keyCallback);
 
   glfwMakeContextCurrent(m_window);
   glfwSwapInterval(1);
@@ -58,7 +54,7 @@ void GLFWWrapper::updateDimensions() {
 
 void GLFWWrapper::newFrame() { updateDimensions(); }
 
-void GLFWWrapper::finishFrame() { 
+void GLFWWrapper::finishFrame() {
   glfwSwapBuffers(m_window);
   glfwPollEvents();
 }
@@ -68,3 +64,8 @@ void GLFWWrapper::fillFrame(double r, double g, double b, double a) {
   glClearColor(r, g, b, a);
   glClear(GL_COLOR_BUFFER_BIT);
 }
+
+GLFWwindow *GLFWWrapper::getWindow() const { return m_window; }
+
+
+void GLFWWrapper::setWindowShouldClose(bool value) { glfwSetWindowShouldClose(m_window, value); }

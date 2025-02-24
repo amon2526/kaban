@@ -1,24 +1,22 @@
-#include <error_bus.hpp>
-#include <input_bus.hpp>
 #include <game.hpp>
-
+#include <input_handler.hpp>
 #include <renderer.hpp>
+
 
 int main(int argc, char *argv[]) {
 
   Game game;
   Renderer renderer;
-
-  renderer.initGraphics(480, "Kaban");
+  InputHandler inputHandler(&renderer, &game);
+  renderer.init(600, "Kaban");
+  renderer.hookUpGame(&game);
 
   game.loadFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
 
   while (!renderer.windowShouldClose()) {
-    ErrorBus::getInstance().notify();
-    InputBus::getInstance().notify();
+    inputHandler.update();
     renderer.render();
   }
   renderer.shutdown();
-
-  return 0;
+ return 0;
 }
