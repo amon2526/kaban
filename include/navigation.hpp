@@ -1,9 +1,9 @@
 #ifndef NAVIGATION_HPP
 #define NAVIGATION_HPP
 
-#include "board.hpp"
-#include <game.hpp>
 #include <cstdint>
+#include <game.hpp>
+
 
 uint8_t getTurnSquare(uint8_t screenSquare, Turn turn);
 

@@ -19,57 +19,68 @@ enum Square : uint8_t
     SQ_NONE = 64
 };
 
-enum Piece : uint8_t
-{
-    EMPTY = 0,
-    WPawn = 1, WKnight, WBishop, WRook, WQueen, WKing, 
-    BPawn = 9, BKnight, BBishop, BRook, BQueen, BKing
+enum Piece : uint8_t {
+  EMPTY = 0,
+  WPawn = 1,
+  WKnight,
+  WBishop,
+  WRook,
+  WQueen,
+  WKing,
+  BPawn = 9,
+  BKnight,
+  BBishop,
+  BRook,
+  BQueen,
+  BKing
 };
 
-enum BitboardIndex : uint8_t
-{
-    PAWNS = 0,
-    KNIGHTS,
-    BISHOPS,
-    ROOKS,
-    QUEENS,
-    KINGS,
-    OCCUPIED
+enum BitboardIndex : uint8_t {
+  PAWNS = 0,
+  KNIGHTS,
+  BISHOPS,
+  ROOKS,
+  QUEENS,
+  KINGS,
+  OCCUPIED
 };
 
-static const std::unordered_map<char, Piece> FENtoPiece = {{'P', WPawn}, {'N', WKnight}, {'B', WBishop}, {'R', WRook}, {'Q', WQueen}, {'K', WKing}, {'p', BPawn}, {'n', BKnight}, {'b', BBishop}, {'r', BRook}, {'q', BQueen}, {'k', BKing}};
-static const std::unordered_map<Piece, char> PieceToFEN = {{WPawn, 'P'}, {WKnight, 'N'}, {WBishop, 'B'}, {WRook, 'R'}, {WQueen, 'Q'}, {WKing, 'K'}, {BPawn, 'p'}, {BKnight, 'n'}, {BBishop, 'b'}, {BRook, 'r'}, {BQueen, 'q'}, {BKing, 'k'}};
+static const std::unordered_map<char, Piece> FENtoPiece = {
+    {'P', WPawn},   {'N', WKnight}, {'B', WBishop}, {'R', WRook},
+    {'Q', WQueen},  {'K', WKing},   {'p', BPawn},   {'n', BKnight},
+    {'b', BBishop}, {'r', BRook},   {'q', BQueen},  {'k', BKing}};
+static const std::unordered_map<Piece, char> PieceToFEN = {
+    {WPawn, 'P'},   {WKnight, 'N'}, {WBishop, 'B'}, {WRook, 'R'},
+    {WQueen, 'Q'},  {WKing, 'K'},   {BPawn, 'p'},   {BKnight, 'n'},
+    {BBishop, 'b'}, {BRook, 'r'},   {BQueen, 'q'},  {BKing, 'k'}};
 
-class Bitboard
-{
+class Bitboard {
 public:
-    uint64_t _value;
+  uint64_t _value;
 
-    Bitboard() : _value(0ULL) {}
-    Bitboard(uint64_t value) : _value(value) {}
+  Bitboard() : _value(0ULL) {}
+  Bitboard(uint64_t value) : _value(value) {}
 
-    bool isSet(Square square) const;
-    void set(Square square);
-    void unset(Square square);
+  bool isSet(Square square) const;
+  void set(Square square);
+  void unset(Square square);
 };
 
-class Board
-{
+class Board {
 public:
-    
-    void setFEN(std::string fen);
+  void setFEN(std::string fen);
 
-    void setPiece(Square square, Piece piece);
-    void unsetPiece(Square square);
-    Piece getPiece(Square square) const; 
-    
-    std::array<std::array<Piece, 8>, 8> getBoard() const;
+  void setPiece(Square square, Piece piece);
+  void unsetPiece(Square square);
+  Piece getPiece(Square square) const;
+
+  std::array<std::array<Piece, 8>, 8> getBoard() const;
 
 private:
-    Bitboard m_white_bitboards[7];
-    Bitboard m_black_bitboards[7];
-    Bitboard m_occupied;
-    bool m_white_to_move;
+  Bitboard m_white_bitboards[7];
+  Bitboard m_black_bitboards[7];
+  Bitboard m_occupied;
+  bool m_white_to_move;
 };
 
 #endif

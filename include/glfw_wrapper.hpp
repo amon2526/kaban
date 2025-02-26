@@ -18,8 +18,6 @@ public:
   void fillFrame(double r, double g, double b, double a);
   GLFWwindow *getWindow() const;
 
-
-
 private:
   GLFWwindow *m_window;
   GLFWmonitor *m_monitor;

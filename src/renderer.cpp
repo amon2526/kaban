@@ -1,16 +1,16 @@
-#include "board.hpp"
+#include <renderer.hpp>
+
 #include <GLFW/glfw3.h>
 #include <cstdint>
 #include <error_handler.hpp>
 #include <game.hpp>
 #include <gl/gl.h>
 #include <imgui.h>
-#include <iostream>
 #include <layout_manager.hpp>
 #include <navigation.hpp>
-#include <renderer.hpp>
 #include <string>
 #include <texture_loader.hpp>
+
 
 bool Renderer::init(int height, const char *title) {
   int width = (float)5 * height / 3;
@@ -20,8 +20,8 @@ bool Renderer::init(int height, const char *title) {
   m_layoutManager.defineSector("game", ((float)2 / 5) * width, 0,
                                ((float)3 / 5) * width, height);
 
-  if (!m_glfw.init(width, height, title, true) || !m_imgui.init(m_glfw.getWindow()) ||
-      !loadTextures()) {
+  if (!m_glfw.init(width, height, title, true) ||
+      !m_imgui.init(m_glfw.getWindow()) || !loadTextures()) {
     shutdown();
     handleError(1, "Failed to init graphics");
     return false;
@@ -172,7 +172,8 @@ void Renderer::drawGame() {
       drawSquare(xPos, yPos, squareSize, squareSize, 0.7, 0.3, 0.3);
     }
 
-    Piece piece = m_game->getBoard()[(relativeSquare >> 3)][(relativeSquare % 8)];
+    Piece piece =
+        m_game->getBoard()[(relativeSquare >> 3)][(relativeSquare % 8)];
 
     if (piece != EMPTY) {
       drawPiece(xPos, yPos, squareSize, squareSize, 4, pieceTextures[piece]);
@@ -210,6 +211,8 @@ void Renderer::drawImage(int x, int y, int width, int height, GLuint texture) {
 
 LayoutManager *Renderer::getLayoutManager() { return &m_layoutManager; }
 
-void Renderer::drawPiece(int x, int y, int width, int height, int padding, GLuint texture) {
-  drawImage(x+padding, y+padding, width-2*padding, height-2*padding, texture);
+void Renderer::drawPiece(int x, int y, int width, int height, int padding,
+                         GLuint texture) {
+  drawImage(x + padding, y + padding, width - 2 * padding, height - 2 * padding,
+            texture);
 }

@@ -7,7 +7,6 @@
 #include <imgui_internal.h>
 #include <string>
 
-
 class GLFWwindow {};
 
 class IMGUIWrapper {

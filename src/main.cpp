@@ -1,9 +1,7 @@
-#include <cstring>
 #include <game.hpp>
-#include <input_handler.hpp>
-#include <iostream>
-#include <renderer.hpp>
 #include <gtest/gtest.h>
+#include <input_handler.hpp>
+#include <renderer.hpp>
 
 int main(int argc, char *argv[]) {
   Game game;

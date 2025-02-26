@@ -1,8 +1,10 @@
-#define STB_IMAGE_IMPLEMENTATION
+#include <texture_loader.hpp>
+
 #include <error_handler.hpp>
 #include <gl/gl.h>
+#define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
-#include <texture_loader.hpp>
+
 
 GLuint TextureLoader::loadTexture(const std::string &filename) {
   int width, height, channels;

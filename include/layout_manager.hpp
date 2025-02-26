@@ -2,11 +2,9 @@
 #define LAYOUT_MANAGER_HPP
 
 #include <board.hpp>
-#include <cstdint>
 #include <navigation.hpp>
 #include <string>
 #include <unordered_map>
-
 
 struct Sector {
   int x, y, width, height;

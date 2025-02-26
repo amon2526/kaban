@@ -1,13 +1,14 @@
 #ifndef RENDERER_HPP
 #define RENDERER_HPP
 
-#include <layout_manager.hpp>
 #include <GLFW/glfw3.h>
 #include <board.hpp>
 #include <game.hpp>
 #include <glfw_wrapper.hpp>
 #include <imgui_wrapper.hpp>
+#include <layout_manager.hpp>
 #include <unordered_map>
+
 
 class Renderer {
 public:
@@ -26,20 +27,22 @@ public:
   void toggleDemoWindow();
   bool windowShouldClose();
   void hookUpGame(Game *game);
-  
-  LayoutManager* getLayoutManager();
+
+  LayoutManager *getLayoutManager();
 
   bool loadTextures();
   void drawGame();
-  void drawSquare(int x, int y, int width, int height, float r, float g, float b);
+  void drawSquare(int x, int y, int width, int height, float r, float g,
+                  float b);
   void drawImage(int x, int y, int width, int height, GLuint texture);
-  void drawPiece(int x, int y, int width, int height, int padding, GLuint texture);
+  void drawPiece(int x, int y, int width, int height, int padding,
+                 GLuint texture);
 
 private:
   LayoutManager m_layoutManager;
 
   Game *m_game;
-  GLFWwindow* window;
+  GLFWwindow *window;
   GLFWWrapper m_glfw;
   IMGUIWrapper m_imgui;
 

@@ -1,10 +1,11 @@
-#include <array>
 #include <board.hpp>
+
+#include <array>
 #include <cstdint>
-#include <cstring>
 #include <error_handler.hpp>
 #include <sstream>
 #include <string>
+
 
 bool Bitboard::isSet(Square square) const {
   return (_value & (1ULL << square)) != 0;
@@ -29,7 +30,9 @@ void Board::setFEN(std::string fen) {
         } else if (isdigit(c)) {
           boardSquarePosition.second = boardSquarePosition.second + (c - '0');
         } else {
-          setPiece((Square)(boardSquarePosition.first*8+boardSquarePosition.second), FENtoPiece.at(c));
+          setPiece((Square)(boardSquarePosition.first * 8 +
+                            boardSquarePosition.second),
+                   FENtoPiece.at(c));
           boardSquarePosition.second++;
         }
       }
@@ -99,7 +102,7 @@ std::array<std::array<Piece, 8>, 8> Board::getBoard() const {
   std::array<std::array<Piece, 8>, 8> board;
   for (uint8_t row = 0; row < 8; row++) {
     for (uint8_t col = 0; col < 8; col++) {
-      board[row][col] = getPiece((Square)(row*8+col));
+      board[row][col] = getPiece((Square)(row * 8 + col));
     }
   }
   return board;

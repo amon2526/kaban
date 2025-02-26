@@ -76,7 +76,6 @@ CMakeFiles/kaban_lib.dir/src/board.cpp.obj: C:/Users/Ivan/source/code/kaban/src/
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstdint \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstdio \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstdlib \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstring \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cwchar \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cwctype \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/debug/assertions.h \
@@ -139,14 +138,12 @@ CMakeFiles/kaban_lib.dir/src/board.cpp.obj: C:/Users/Ivan/source/code/kaban/src/
   C:/Programs/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
-  C:/Programs/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/stddef.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/stdint.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/stdio.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/stdlib.h \
-  C:/Programs/mingw64/x86_64-w64-mingw32/include/string.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/vadefs.h \
@@ -1273,8 +1270,6 @@ CMakeFiles/kaban_lib.dir/src/renderer.cpp.obj: C:/Users/Ivan/source/code/kaban/s
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bit \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/alloc_traits.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/allocator.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/basic_ios.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/basic_ios.tcc \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/basic_string.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/basic_string.tcc \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/char_traits.h \
@@ -1282,32 +1277,22 @@ CMakeFiles/kaban_lib.dir/src/renderer.cpp.obj: C:/Users/Ivan/source/code/kaban/s
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/concept_check.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/cpp_type_traits.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/cxxabi_forced.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/cxxabi_init_exception.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/enable_special_members.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/erase_if.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/exception.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/exception_defines.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/exception_ptr.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/functexcept.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/functional_hash.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/hash_bytes.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/hashtable.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/hashtable_policy.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/invoke.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/ios_base.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/istream.tcc \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_classes.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_classes.tcc \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_facets.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_facets.tcc \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/localefwd.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/memory_resource.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/memoryfwd.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/move.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/nested_exception.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/new_allocator.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/node_handle.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/ostream.tcc \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/ostream_insert.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/postypes.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/predefined_ops.h \
@@ -1324,8 +1309,6 @@ CMakeFiles/kaban_lib.dir/src/renderer.cpp.obj: C:/Users/Ivan/source/code/kaban/s
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_iterator_base_funcs.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_iterator_base_types.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_pair.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/streambuf.tcc \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/streambuf_iterator.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/string_view.tcc \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stringfwd.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/unordered_map.h \
@@ -1344,32 +1327,22 @@ CMakeFiles/kaban_lib.dir/src/renderer.cpp.obj: C:/Users/Ivan/source/code/kaban/s
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstdio \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstdlib \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cwchar \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cwctype \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/debug/assertions.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/debug/debug.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/exception \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/aligned_buffer.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/alloc_traits.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/atomicity.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/numeric_traits.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/string_conversions.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/type_traits.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/initializer_list \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ios \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/iosfwd \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/iostream \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/istream \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/limits \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/math.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/new \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ostream \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/pstl/pstl_config.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/stdexcept \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/stdlib.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/streambuf \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/string \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/string_view \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/system_error \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/bessel_function.tcc \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/beta_function.tcc \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/ell_integral.tcc \
@@ -1384,18 +1357,11 @@ CMakeFiles/kaban_lib.dir/src/renderer.cpp.obj: C:/Users/Ivan/source/code/kaban/s
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/special_function_util.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tuple \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/type_traits \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/typeinfo \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/unordered_map \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/atomic_word.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/c++allocator.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/c++locale.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/error_constants.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/gthr-default.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/gthr.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/cetintrin.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/cldemoteintrin.h \
@@ -1482,7 +1448,6 @@ CMakeFiles/kaban_lib.dir/src/renderer.cpp.obj: C:/Users/Ivan/source/code/kaban/s
   C:/Programs/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
-  C:/Programs/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/stdarg.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/stddef.h \
@@ -1491,10 +1456,8 @@ CMakeFiles/kaban_lib.dir/src/renderer.cpp.obj: C:/Users/Ivan/source/code/kaban/s
   C:/Programs/mingw64/x86_64-w64-mingw32/include/stdlib.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/string.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
-  C:/Programs/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/wchar.h \
-  C:/Programs/mingw64/x86_64-w64-mingw32/include/wctype.h \
   C:/Users/Ivan/source/code/kaban/include/board.hpp \
   C:/Users/Ivan/source/code/kaban/include/error_handler.hpp \
   C:/Users/Ivan/source/code/kaban/include/game.hpp \
@@ -1586,7 +1549,6 @@ CMakeFiles/kaban_lib.dir/src/texture_loader.cpp.obj: C:/Users/Ivan/source/code/k
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/range_access.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/refwrap.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/requires_hosted.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/specfun.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/std_abs.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_algobase.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_construct.h \
@@ -1604,7 +1566,6 @@ CMakeFiles/kaban_lib.dir/src/texture_loader.cpp.obj: C:/Users/Ivan/source/code/k
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cctype \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cerrno \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/clocale \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cmath \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/concepts \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstddef \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstdio \
@@ -1618,25 +1579,11 @@ CMakeFiles/kaban_lib.dir/src/texture_loader.cpp.obj: C:/Users/Ivan/source/code/k
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/type_traits.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/initializer_list \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/iosfwd \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/limits \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/math.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/new \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/pstl/pstl_config.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/stdlib.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/string \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/string_view \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/bessel_function.tcc \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/beta_function.tcc \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/ell_integral.tcc \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/exp_integral.tcc \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/gamma.tcc \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/hypergeometric.tcc \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/legendre_function.tcc \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/modified_bessel_func.tcc \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/poly_hermite.tcc \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/poly_laguerre.tcc \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/riemann_zeta.tcc \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/special_function_util.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tuple \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/type_traits \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/c++allocator.h \
@@ -1688,7 +1635,6 @@ CMakeFiles/kaban_lib.dir/src/texture_loader.cpp.obj: C:/Users/Ivan/source/code/k
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/smmintrin.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
-  C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/tbmintrin.h \
   C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/tmmintrin.h \
@@ -1721,7 +1667,6 @@ CMakeFiles/kaban_lib.dir/src/texture_loader.cpp.obj: C:/Users/Ivan/source/code/k
   C:/Programs/mingw64/x86_64-w64-mingw32/include/_timeval.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/apiset.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/apisetcconv.h \
-  C:/Programs/mingw64/x86_64-w64-mingw32/include/assert.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/basetsd.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/bcrypt.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/bemapiset.h \
@@ -1763,7 +1708,6 @@ CMakeFiles/kaban_lib.dir/src/texture_loader.cpp.obj: C:/Users/Ivan/source/code/k
   C:/Programs/mingw64/x86_64-w64-mingw32/include/locale.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/lzexpand.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/malloc.h \
-  C:/Programs/mingw64/x86_64-w64-mingw32/include/math.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/mciapi.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/mcx.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/memoryapi.h \
@@ -1832,7 +1776,6 @@ CMakeFiles/kaban_lib.dir/src/texture_loader.cpp.obj: C:/Users/Ivan/source/code/k
   C:/Programs/mingw64/x86_64-w64-mingw32/include/specstrings.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/stdarg.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/stddef.h \
-  C:/Programs/mingw64/x86_64-w64-mingw32/include/stdint.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/stdio.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/stdlib.h \
   C:/Programs/mingw64/x86_64-w64-mingw32/include/stralign.h \
@@ -2129,10 +2072,6 @@ C:/Programs/mingw64/x86_64-w64-mingw32/include/urlmon.h:
 
 C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstdlib:
 
-C:/Programs/mingw64/x86_64-w64-mingw32/include/libloaderapi.h:
-
-C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstring:
-
 C:/Programs/mingw64/x86_64-w64-mingw32/include/ddeml.h:
 
 C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cwchar:
@@ -2297,10 +2236,6 @@ C:/Programs/mingw64/x86_64-w64-mingw32/include/stdint.h:
 
 C:/Programs/mingw64/x86_64-w64-mingw32/include/stdio.h:
 
-C:/Programs/mingw64/x86_64-w64-mingw32/include/debugapi.h:
-
-C:/Programs/mingw64/x86_64-w64-mingw32/include/string.h:
-
 C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/prfchiintrin.h:
 
 C:/Programs/mingw64/x86_64-w64-mingw32/include/swprintf.inl:
@@ -2356,6 +2291,10 @@ C:/Programs/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/clwbintrin.h:
 C:/Programs/mingw64/x86_64-w64-mingw32/include/float.h:
 
 C:/Programs/mingw64/x86_64-w64-mingw32/include/stdarg.h:
+
+C:/Programs/mingw64/x86_64-w64-mingw32/include/debugapi.h:
+
+C:/Programs/mingw64/x86_64-w64-mingw32/include/string.h:
 
 C:/Users/Ivan/source/code/kaban/include/game.hpp:
 
@@ -2664,6 +2603,8 @@ C:/Programs/mingw64/x86_64-w64-mingw32/include/jobapi.h:
 C:/Programs/mingw64/x86_64-w64-mingw32/include/joystickapi.h:
 
 C:/Programs/mingw64/x86_64-w64-mingw32/include/ktmtypes.h:
+
+C:/Programs/mingw64/x86_64-w64-mingw32/include/libloaderapi.h:
 
 C:/Programs/mingw64/x86_64-w64-mingw32/include/lzexpand.h:
 

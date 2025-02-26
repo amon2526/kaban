@@ -1,6 +1,6 @@
-#include <GLFW/glfw3.h>
-#include <error_handler.hpp>
 #include <glfw_wrapper.hpp>
+
+#include <error_handler.hpp>
 #include <imgui.h>
 #include <imgui_internal.h>
 
