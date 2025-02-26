@@ -7,7 +7,7 @@ class GLFWWrapper {
 public:
   GLFWWrapper() = default;
   ~GLFWWrapper() = default;
-  bool init(int width, int height, const char *title);
+  bool init(int width, int height, const char *title, bool useVsync = false);
   void shutdown();
   bool windowShouldClose();
   void setWindowShouldClose(bool value);

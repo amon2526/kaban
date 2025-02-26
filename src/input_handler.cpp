@@ -1,9 +1,11 @@
 
+#include "board.hpp"
 #include <game.hpp>
 #include <imgui.h>
 #include <imgui_internal.h>
 #include <input_handler.hpp>
 #include <layout_manager.hpp>
+#include <navigation.hpp>
 
 void InputHandler::update() { handleInput(); }
 
@@ -11,28 +13,29 @@ void InputHandler::handleInput() {
   if (!ImGui::GetCurrentContext()) {
     return;
   }
-  Square pointedSquare = m_layoutManager->getBoardSquare(
+  Square screenSquare = m_layoutManager->getBoardSquarePosition(
       ImGui::GetMousePos().x, ImGui::GetMousePos().y);
+  Square relativeSquare = screenSquare;//getTurnSquare(screenSquare, m_game->getTurn());
   if (ImGui::IsMouseDown(ImGuiMouseButton_Left)) {
     if (!m_prevLMB) {
-      m_game->holdPiece(pointedSquare);
+      m_game->holdPiece(relativeSquare);
       m_prevLMB = true;
     }
   } else {
     if (m_prevLMB) {
-      m_game->releasePiece(pointedSquare);
+      m_game->releasePiece(relativeSquare);
       m_prevLMB = false;
     }
   }
 
   if (ImGui::IsMouseDown(ImGuiMouseButton_Right)) {
     if (!m_prevRMB) {
-      m_game->holdPiece(pointedSquare);
+      m_game->holdPiece(relativeSquare);
       m_prevRMB = true;
     }
   } else {
     if (m_prevRMB) {
-      m_game->releasePiece(pointedSquare);
+      m_game->releasePiece(relativeSquare);
       m_prevRMB = false;
     }
   }

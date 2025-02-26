@@ -1,6 +1,7 @@
 #ifndef BOARD_HPP
 #define BOARD_HPP
 
+#include <array>
 #include <cstdint>
 #include <string>
 #include <unordered_map>
@@ -55,16 +56,14 @@ public:
 class Board
 {
 public:
-    Board(){};
-    ~Board(){};
-    void loadFEN(std::string fen);
-    void set(Square square, Piece piece);
-    void unset(Square square);
     
-    void setPlainBoard(const char* board);
-    char* getPlainBoard() const;
+    void setFEN(std::string fen);
 
-    Piece getPiece(Square square) const;
+    void setPiece(Square square, Piece piece);
+    void unsetPiece(Square square);
+    Piece getPiece(Square square) const; 
+    
+    std::array<std::array<Piece, 8>, 8> getBoard() const;
 
 private:
     Bitboard m_white_bitboards[7];

@@ -1,9 +1,12 @@
 #ifndef LAYOUT_MANAGER_HPP
 #define LAYOUT_MANAGER_HPP
 
-#include "board.hpp"
+#include <board.hpp>
+#include <cstdint>
+#include <navigation.hpp>
 #include <string>
 #include <unordered_map>
+
 
 struct Sector {
   int x, y, width, height;
@@ -22,7 +25,7 @@ public:
     return sectors.at(name);
   }
 
-  Square getBoardSquare(int mouseX, int mouseY) const {
+  Square getBoardSquarePosition(int mouseX, int mouseY) const {
     Sector gameSector = getSector("game");
     if (mouseX < gameSector.x || mouseX > gameSector.x + gameSector.width ||
         mouseY < gameSector.y || mouseY > gameSector.y + gameSector.height)
@@ -32,7 +35,7 @@ public:
     int cellSizeY = gameSector.height / 8;
 
     int col = (mouseX - gameSector.x) / cellSizeX;
-    int row = (mouseY - gameSector.y) / cellSizeY;
+    int row = ((gameSector.height - mouseY) - gameSector.y) / cellSizeY;
 
     return (Square)(row * 8 + col);
   }

@@ -1,7 +1,7 @@
 #ifndef RENDERER_HPP
 #define RENDERER_HPP
 
-#include "layout_manager.hpp"
+#include <layout_manager.hpp>
 #include <GLFW/glfw3.h>
 #include <board.hpp>
 #include <game.hpp>
@@ -16,7 +16,6 @@ public:
 
   bool init(int height, const char *title);
   void shutdown();
-  void updateSectors(int width, int height);
 
   void render();
   void updateTime();
@@ -31,9 +30,10 @@ public:
   LayoutManager* getLayoutManager();
 
   bool loadTextures();
-  void drawGame(const GameState &gameState);
+  void drawGame();
   void drawSquare(int x, int y, int width, int height, float r, float g, float b);
   void drawImage(int x, int y, int width, int height, GLuint texture);
+  void drawPiece(int x, int y, int width, int height, int padding, GLuint texture);
 
 private:
   LayoutManager m_layoutManager;
@@ -43,7 +43,7 @@ private:
   GLFWWrapper m_glfw;
   IMGUIWrapper m_imgui;
 
-  std::unordered_map<char, GLuint> pieceTextures;
+  std::unordered_map<Piece, GLuint> pieceTextures;
 
   int m_lastTime = 0;
   int m_deltaTime = 0;

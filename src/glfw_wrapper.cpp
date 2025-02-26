@@ -4,7 +4,8 @@
 #include <imgui.h>
 #include <imgui_internal.h>
 
-bool GLFWWrapper::init(int width, int height, const char *title) {
+bool GLFWWrapper::init(int width, int height, const char *title,
+                       bool useVsync) {
   glfwSetErrorCallback(errorCallback);
 
   if (!glfwInit()) {
@@ -14,7 +15,7 @@ bool GLFWWrapper::init(int width, int height, const char *title) {
   }
 
   glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
-  
+
   m_monitor = glfwGetPrimaryMonitor();
   m_mode = glfwGetVideoMode(m_monitor);
 
@@ -25,9 +26,9 @@ bool GLFWWrapper::init(int width, int height, const char *title) {
     shutdown();
     return false;
   }
-  
+
   glfwMakeContextCurrent(m_window);
-  glfwSwapInterval(1);
+  glfwSwapInterval(useVsync ? 1 : 0);
 
   updateDimensions();
 
@@ -67,5 +68,6 @@ void GLFWWrapper::fillFrame(double r, double g, double b, double a) {
 
 GLFWwindow *GLFWWrapper::getWindow() const { return m_window; }
 
-
-void GLFWWrapper::setWindowShouldClose(bool value) { glfwSetWindowShouldClose(m_window, value); }
+void GLFWWrapper::setWindowShouldClose(bool value) {
+  glfwSetWindowShouldClose(m_window, value);
+}

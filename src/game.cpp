@@ -1,41 +1,23 @@
 #include "board.hpp"
 #include <game.hpp>
+#include <string>
+
+void Game::setFEN(std::string fen) { m_board.setFEN(fen); }
 
 
-Game::Game() {};
-Game::~Game() {};
-
-void Game::loadFEN(std::string fen) { m_board.loadFEN(fen); }
-
-char *Game::getPlainBoard() { return m_board.getPlainBoard(); }
-
-void Game::setPlainBoard(char *board) { m_board.setPlainBoard(board); }
-
-void Game::holdPiece(Square square) {
-    if (m_board.getPiece(square) == EMPTY) {
-        m_selectedPiece = SQ_NONE;
-    }
-    else {
-    m_selectedPiece = square;
-    m_attachedPiece = square;
-    }
-}
-void Game::releasePiece(Square square) {
-    m_attachedPiece = SQ_NONE;
+std::array<std::array<Piece, 8>, 8> Game::getBoard() const {
+  return m_board.getBoard();
 }
 
-Turn Game::getTurn() {
-    return m_turn;
+void Game::holdPiece(int index) {
+  if (m_board.getPiece((Square)index) == EMPTY) {
+    m_selectedPiece = SQ_NONE;
+  } else {
+    m_selectedPiece = (Square)index;
+    m_isHoldingPiece = true;
+  }
 }
 
-void Game::updateGameState() {
-    m_gameState.turn = getTurn();
-    m_gameState.attachedPiece = m_attachedPiece;
-    m_gameState.selectedPiece = m_selectedPiece;
-    m_gameState.plainBoard = getPlainBoard();
-}
-
-const GameState& Game::getGameState() {
-    updateGameState();
-    return m_gameState;
+void Game::releasePiece(int index) {
+  m_isHoldingPiece = false;
 }

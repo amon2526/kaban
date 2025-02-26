@@ -1,8 +1,10 @@
+#include <array>
 #include <board.hpp>
-#include <sstream>
-#include <cmath>
+#include <cstdint>
 #include <cstring>
 #include <error_handler.hpp>
+#include <sstream>
+#include <string>
 
 bool Bitboard::isSet(Square square) const {
   return (_value & (1ULL << square)) != 0;
@@ -12,67 +14,25 @@ void Bitboard::set(Square square) { _value |= (1ULL << square); }
 
 void Bitboard::unset(Square square) { _value &= (1ULL << square); }
 
-void Board::setPlainBoard(const char *board) {
-  if (strlen(board) == 64) {
-    for (int i = 0; i < 64; i++) {
-      if (board[i] != ' ') {
-        set((Square)i, FENtoPiece.at(board[i]));
-      }
-    }
-  } else {
-    handleError(
-        0, "Cannot set a board: invalid board passed");
-  }
-}
-
-char *Board::getPlainBoard() const {
-  char *board = new char[65];
-
-  for (int i = 0; i < 64; i++) {
-    board[i] = ' ';
-  }
-  board[64] = '\0';
-
-  for (int i = 0; i < 6; i++) {
-    for (int j = 0; j < 64; j++) {
-      if (m_white_bitboards[i].isSet((Square)j)) {
-        board[j] = PieceToFEN.at((Piece)(i + 1));
-      }
-    }
-    for (int j = 0; j < 64; j++) {
-      if (m_black_bitboards[i].isSet((Square)j)) {
-        board[j] = PieceToFEN.at((Piece)(i + 9));
-      }
-    }
-  }
-
-  return board;
-}
-
-void Board::loadFEN(std::string fen) {
-  std::string fen_copy = fen;
-  std::istringstream iss(fen_copy);
+void Board::setFEN(std::string fen) {
+  std::stringstream ss(fen);
   std::string argument;
   size_t argument_index = 0;
-  while (iss >> argument) {
+  while (std::getline(ss, argument, ' ')) {
     switch (argument_index) {
     case 0: {
-      std::string board;
-      board.reserve(65);
-
+      std::pair<uint8_t, uint8_t> boardSquarePosition = {7, 0};
       for (char c : argument) {
         if (c == '/') {
-          size_t new_position = ceil((float)(board.size() - 1) / 8) * 8;
-          board.resize(new_position, ' ');
+          boardSquarePosition.first--;
+          boardSquarePosition.second = 0;
         } else if (isdigit(c)) {
-          size_t new_position = board.size() + (c - '0');
-          board.resize(new_position, ' ');
+          boardSquarePosition.second = boardSquarePosition.second + (c - '0');
         } else {
-          board += c;
+          setPiece((Square)(boardSquarePosition.first*8+boardSquarePosition.second), FENtoPiece.at(c));
+          boardSquarePosition.second++;
         }
       }
-
-      setPlainBoard(board.data());
       break;
     }
 
@@ -83,7 +43,7 @@ void Board::loadFEN(std::string fen) {
   }
 }
 
-void Board::set(Square square, Piece piece) {
+void Board::setPiece(Square square, Piece piece) {
   if (piece == EMPTY)
     return;
 
@@ -97,7 +57,7 @@ void Board::set(Square square, Piece piece) {
   m_occupied.set(square);
 }
 
-void Board::unset(Square square) {
+void Board::unsetPiece(Square square) {
   for (int i = 0; i < 7; i++) {
     m_white_bitboards[i].unset(square);
     m_black_bitboards[i].unset(square);
@@ -106,30 +66,41 @@ void Board::unset(Square square) {
 }
 
 Piece Board::getPiece(Square square) const {
-  if (m_white_bitboards[PAWNS].isSet(square))
-    return WPawn;
-  else if (m_white_bitboards[KNIGHTS].isSet(square))
-    return WKnight;
-  else if (m_white_bitboards[BISHOPS].isSet(square)) 
-    return WBishop;
-  else if (m_white_bitboards[ROOKS].isSet(square))
-    return WRook;
-  else if (m_white_bitboards[QUEENS].isSet(square))
-    return WQueen;
-  else if (m_white_bitboards[KINGS].isSet(square))
-    return WKing;
-  else if (m_black_bitboards[PAWNS].isSet(square))
-    return BPawn;
-  else if (m_black_bitboards[KNIGHTS].isSet(square))
-    return BKnight;
-  else if (m_black_bitboards[BISHOPS].isSet(square))
-    return BBishop;
-  else if (m_black_bitboards[ROOKS].isSet(square))
-    return BRook;
-  else if (m_black_bitboards[QUEENS].isSet(square))
-    return BQueen;
-  else if (m_black_bitboards[KINGS].isSet(square))
-    return BKing;
-
+  if (square != SQ_NONE) {
+    if (m_white_bitboards[PAWNS].isSet(square))
+      return WPawn;
+    else if (m_white_bitboards[KNIGHTS].isSet(square))
+      return WKnight;
+    else if (m_white_bitboards[BISHOPS].isSet(square))
+      return WBishop;
+    else if (m_white_bitboards[ROOKS].isSet(square))
+      return WRook;
+    else if (m_white_bitboards[QUEENS].isSet(square))
+      return WQueen;
+    else if (m_white_bitboards[KINGS].isSet(square))
+      return WKing;
+    else if (m_black_bitboards[PAWNS].isSet(square))
+      return BPawn;
+    else if (m_black_bitboards[KNIGHTS].isSet(square))
+      return BKnight;
+    else if (m_black_bitboards[BISHOPS].isSet(square))
+      return BBishop;
+    else if (m_black_bitboards[ROOKS].isSet(square))
+      return BRook;
+    else if (m_black_bitboards[QUEENS].isSet(square))
+      return BQueen;
+    else if (m_black_bitboards[KINGS].isSet(square))
+      return BKing;
+  }
   return EMPTY;
+}
+
+std::array<std::array<Piece, 8>, 8> Board::getBoard() const {
+  std::array<std::array<Piece, 8>, 8> board;
+  for (uint8_t row = 0; row < 8; row++) {
+    for (uint8_t col = 0; col < 8; col++) {
+      board[row][col] = getPiece((Square)(row*8+col));
+    }
+  }
+  return board;
 }

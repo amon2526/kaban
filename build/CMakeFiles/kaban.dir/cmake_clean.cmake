@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/kaban.dir/src/input_handler.cpp.obj.d"
   "CMakeFiles/kaban.dir/src/main.cpp.obj"
   "CMakeFiles/kaban.dir/src/main.cpp.obj.d"
+  "CMakeFiles/kaban.dir/src/navigation.cpp.obj"
+  "CMakeFiles/kaban.dir/src/navigation.cpp.obj.d"
   "CMakeFiles/kaban.dir/src/renderer.cpp.obj"
   "CMakeFiles/kaban.dir/src/renderer.cpp.obj.d"
   "CMakeFiles/kaban.dir/src/texture_loader.cpp.obj"

@@ -1,0 +1,2 @@
+C:\Programs\mingw64\bin\ar.exe qc libapp_lib.a CMakeFiles/app_lib.dir/src/board.cpp.obj CMakeFiles/app_lib.dir/src/error_handler.cpp.obj CMakeFiles/app_lib.dir/src/game.cpp.obj CMakeFiles/app_lib.dir/src/glfw_wrapper.cpp.obj CMakeFiles/app_lib.dir/src/imgui_wrapper.cpp.obj CMakeFiles/app_lib.dir/src/input_handler.cpp.obj CMakeFiles/app_lib.dir/src/navigation.cpp.obj CMakeFiles/app_lib.dir/src/renderer.cpp.obj CMakeFiles/app_lib.dir/src/texture_loader.cpp.obj
+C:\Programs\mingw64\bin\ranlib.exe libapp_lib.a

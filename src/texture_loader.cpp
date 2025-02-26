@@ -10,7 +10,7 @@ GLuint TextureLoader::loadTexture(const std::string &filename) {
       stbi_load(filename.c_str(), &width, &height, &channels, 4);
 
   if (!data) {
-    handleError(1, "Failed to load a texture");
+    handleError(1, stbi_failure_reason());
     return 0;
   }
 

@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/Ivan/source/code/kaban/src/imgui_wrapper.cpp" "CMakeFiles/kaban.dir/src/imgui_wrapper.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/imgui_wrapper.cpp.obj.d"
   "C:/Users/Ivan/source/code/kaban/src/input_handler.cpp" "CMakeFiles/kaban.dir/src/input_handler.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/input_handler.cpp.obj.d"
   "C:/Users/Ivan/source/code/kaban/src/main.cpp" "CMakeFiles/kaban.dir/src/main.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/main.cpp.obj.d"
+  "C:/Users/Ivan/source/code/kaban/src/navigation.cpp" "CMakeFiles/kaban.dir/src/navigation.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/navigation.cpp.obj.d"
   "C:/Users/Ivan/source/code/kaban/src/renderer.cpp" "CMakeFiles/kaban.dir/src/renderer.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/renderer.cpp.obj.d"
   "C:/Users/Ivan/source/code/kaban/src/texture_loader.cpp" "CMakeFiles/kaban.dir/src/texture_loader.cpp.obj" "gcc" "CMakeFiles/kaban.dir/src/texture_loader.cpp.obj.d"
   )
