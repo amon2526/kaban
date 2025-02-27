@@ -1,12 +1,6 @@
 [
 {
   "directory": "C:/Users/Ivan/source/code/kaban/build",
-  "command": "C:\\Programs\\mingw64\\bin\\g++.exe  @CMakeFiles/kaban.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\kaban.dir\\src\\board.cpp.obj -c C:\\Users\\Ivan\\source\\code\\kaban\\src\\board.cpp",
-  "file": "C:/Users/Ivan/source/code/kaban/src/board.cpp",
-  "output": "CMakeFiles/kaban.dir/src/board.cpp.obj"
-},
-{
-  "directory": "C:/Users/Ivan/source/code/kaban/build",
   "command": "C:\\Programs\\mingw64\\bin\\g++.exe  @CMakeFiles/kaban.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\kaban.dir\\src\\error_handler.cpp.obj -c C:\\Users\\Ivan\\source\\code\\kaban\\src\\error_handler.cpp",
   "file": "C:/Users/Ivan/source/code/kaban/src/error_handler.cpp",
   "output": "CMakeFiles/kaban.dir/src/error_handler.cpp.obj"
@@ -49,6 +43,12 @@
 },
 {
   "directory": "C:/Users/Ivan/source/code/kaban/build",
+  "command": "C:\\Programs\\mingw64\\bin\\g++.exe  @CMakeFiles/kaban.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\kaban.dir\\src\\position.cpp.obj -c C:\\Users\\Ivan\\source\\code\\kaban\\src\\position.cpp",
+  "file": "C:/Users/Ivan/source/code/kaban/src/position.cpp",
+  "output": "CMakeFiles/kaban.dir/src/position.cpp.obj"
+},
+{
+  "directory": "C:/Users/Ivan/source/code/kaban/build",
   "command": "C:\\Programs\\mingw64\\bin\\g++.exe  @CMakeFiles/kaban.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\kaban.dir\\src\\renderer.cpp.obj -c C:\\Users\\Ivan\\source\\code\\kaban\\src\\renderer.cpp",
   "file": "C:/Users/Ivan/source/code/kaban/src/renderer.cpp",
   "output": "CMakeFiles/kaban.dir/src/renderer.cpp.obj"
@@ -58,12 +58,6 @@
   "command": "C:\\Programs\\mingw64\\bin\\g++.exe  @CMakeFiles/kaban.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\kaban.dir\\src\\texture_loader.cpp.obj -c C:\\Users\\Ivan\\source\\code\\kaban\\src\\texture_loader.cpp",
   "file": "C:/Users/Ivan/source/code/kaban/src/texture_loader.cpp",
   "output": "CMakeFiles/kaban.dir/src/texture_loader.cpp.obj"
-},
-{
-  "directory": "C:/Users/Ivan/source/code/kaban/build",
-  "command": "C:\\Programs\\mingw64\\bin\\g++.exe  @CMakeFiles/kaban_lib.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\kaban_lib.dir\\src\\board.cpp.obj -c C:\\Users\\Ivan\\source\\code\\kaban\\src\\board.cpp",
-  "file": "C:/Users/Ivan/source/code/kaban/src/board.cpp",
-  "output": "CMakeFiles/kaban_lib.dir/src/board.cpp.obj"
 },
 {
   "directory": "C:/Users/Ivan/source/code/kaban/build",
@@ -100,6 +94,12 @@
   "command": "C:\\Programs\\mingw64\\bin\\g++.exe  @CMakeFiles/kaban_lib.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\kaban_lib.dir\\src\\navigation.cpp.obj -c C:\\Users\\Ivan\\source\\code\\kaban\\src\\navigation.cpp",
   "file": "C:/Users/Ivan/source/code/kaban/src/navigation.cpp",
   "output": "CMakeFiles/kaban_lib.dir/src/navigation.cpp.obj"
+},
+{
+  "directory": "C:/Users/Ivan/source/code/kaban/build",
+  "command": "C:\\Programs\\mingw64\\bin\\g++.exe  @CMakeFiles/kaban_lib.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\kaban_lib.dir\\src\\position.cpp.obj -c C:\\Users\\Ivan\\source\\code\\kaban\\src\\position.cpp",
+  "file": "C:/Users/Ivan/source/code/kaban/src/position.cpp",
+  "output": "CMakeFiles/kaban_lib.dir/src/position.cpp.obj"
 },
 {
   "directory": "C:/Users/Ivan/source/code/kaban/build",

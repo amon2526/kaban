@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/kaban.dir/src/board.cpp.obj"
-  "CMakeFiles/kaban.dir/src/board.cpp.obj.d"
   "CMakeFiles/kaban.dir/src/error_handler.cpp.obj"
   "CMakeFiles/kaban.dir/src/error_handler.cpp.obj.d"
   "CMakeFiles/kaban.dir/src/game.cpp.obj"
@@ -15,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/kaban.dir/src/main.cpp.obj.d"
   "CMakeFiles/kaban.dir/src/navigation.cpp.obj"
   "CMakeFiles/kaban.dir/src/navigation.cpp.obj.d"
+  "CMakeFiles/kaban.dir/src/position.cpp.obj"
+  "CMakeFiles/kaban.dir/src/position.cpp.obj.d"
   "CMakeFiles/kaban.dir/src/renderer.cpp.obj"
   "CMakeFiles/kaban.dir/src/renderer.cpp.obj.d"
   "CMakeFiles/kaban.dir/src/texture_loader.cpp.obj"

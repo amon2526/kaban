@@ -1,7 +1,6 @@
 #ifndef LAYOUT_MANAGER_HPP
 #define LAYOUT_MANAGER_HPP
 
-#include <board.hpp>
 #include <navigation.hpp>
 #include <string>
 #include <unordered_map>

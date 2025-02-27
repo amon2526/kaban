@@ -47,7 +47,7 @@ bool GLFWWrapper::windowShouldClose() {
   return glfwWindowShouldClose(m_window);
 }
 
-int GLFWWrapper::getTime() { return glfwGetTime(); }
+double GLFWWrapper::getTime() { return glfwGetTime(); }
 
 void GLFWWrapper::updateDimensions() {
   glfwGetFramebufferSize(getWindow(), &m_display_w, &m_display_h);

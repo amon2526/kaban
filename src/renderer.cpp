@@ -1,16 +1,21 @@
+#include <cmath>
+#include <iterator>
 #include <renderer.hpp>
 
+#include "position.hpp"
 #include <GLFW/glfw3.h>
 #include <cstdint>
 #include <error_handler.hpp>
 #include <game.hpp>
 #include <gl/gl.h>
 #include <imgui.h>
+#include <iostream>
 #include <layout_manager.hpp>
 #include <navigation.hpp>
 #include <string>
 #include <texture_loader.hpp>
-
+#include <utility>
+#include <windows.h>
 
 bool Renderer::init(int height, const char *title) {
   int width = (float)5 * height / 3;
@@ -35,6 +40,7 @@ bool Renderer::init(int height, const char *title) {
 void Renderer::render() {
 
   updateTime();
+  updateMousePosition();
 
   newFrame();
   fillFrame();
@@ -66,7 +72,7 @@ void Renderer::render() {
   ImGui::Separator();
   ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 10);
   ImGui::Text("Current turn: %s",
-              m_game->getTurn() == WHITE ? "White" : "Black");
+              m_game->getTurn() == White ? "White" : "Black");
   ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 10);
   std::string selectedPieceStr = "None";
   if (m_game->getSelectedPiece() != SQ_NONE) {
@@ -132,20 +138,23 @@ void Renderer::hookUpGame(Game *game) { m_game = game; }
 
 bool Renderer::loadTextures() {
   std::string path = "resources/";
-  for (int i = WPawn; i <= WKing; i++) {
+  for (uint8_t i = 0; i < 12; i++) {
     char name = PieceToFEN.at((Piece)i);
-    GLuint texture = TextureLoader::loadTexture(path + name + "b.png");
-    if (texture == 0) {
-      return false;
+    GLuint texture;
+    if (isWhite((Piece)i)) {
+      texture = TextureLoader::loadTexture(path + name + "b.png");
+    } else {
+      texture = TextureLoader::loadTexture(path + name + "w.png");
     }
+    if (texture == 0)
+      return false;
     pieceTextures[(Piece)i] = texture;
-    texture = TextureLoader::loadTexture(path + name + "w.png");
-    if (texture == 0) {
-      return false;
-    }
-    pieceTextures[(Piece)(i + 8)] = texture;
   }
   return true;
+}
+
+double euclidean_distance(const std::pair<double, double>& a, const std::pair<double, double>& b) {
+  return std::sqrt((a.first - b.first) * (a.first - b.first) + (a.second - b.second) * (a.second - b.second));
 }
 
 void Renderer::drawGame() {
@@ -153,6 +162,7 @@ void Renderer::drawGame() {
 
   const Sector &boardSector = m_layoutManager.getSector("game");
   int squareSize = boardSector.width >> 3;
+  auto board = m_game->getBoard();
 
   for (uint8_t square = 0; square < 64; square++) {
 
@@ -172,11 +182,41 @@ void Renderer::drawGame() {
       drawSquare(xPos, yPos, squareSize, squareSize, 0.7, 0.3, 0.3);
     }
 
-    Piece piece =
-        m_game->getBoard()[(relativeSquare >> 3)][(relativeSquare % 8)];
+    Piece piece = board[(relativeSquare >> 3)][(relativeSquare % 8)];
 
-    if (piece != EMPTY) {
+    if (piece != EMPTY && !((relativeSquare == m_game->getSelectedPiece() &&
+                             m_game->getIsHoldingPiece()))) {
       drawPiece(xPos, yPos, squareSize, squareSize, 4, pieceTextures[piece]);
+    }
+    if (m_game->getIsHoldingPiece()) {
+      std::pair<double, double> holdingPiecePos;
+      double lerpSpeed = 0.5f * m_deltaTime;
+      int halfSquareSize = squareSize >> 1;
+
+      if (!m_wasHoldingPiece) {
+        m_wasHoldingPiece = true;
+        holdingPiecePos.first = m_mousePos.first - halfSquareSize;
+        holdingPiecePos.second =
+            (m_glfw.getHeight() - m_mousePos.second) - halfSquareSize;
+      } else {
+        double distance = euclidean_distance(m_lastHoldedPiecePosition, m_mousePos);
+        if (distance < 0.1f) { 
+          holdingPiecePos = m_lastHoldedPiecePosition;
+        }
+        else {
+          holdingPiecePos.first = m_lastHoldedPiecePosition.first + (m_mousePos.first - halfSquareSize - m_lastHoldedPiecePosition.first) * lerpSpeed;
+          holdingPiecePos.second = m_lastHoldedPiecePosition.second + ((m_glfw.getHeight() - m_mousePos.second) - halfSquareSize - m_lastHoldedPiecePosition.second) * lerpSpeed;
+        }
+      }
+
+      uint8_t selectedPiece = m_game->getSelectedPiece();
+      drawPiece(holdingPiecePos.first, holdingPiecePos.second, squareSize,
+                squareSize, 4,
+                pieceTextures[board[selectedPiece >> 3][selectedPiece % 8]]);
+
+      m_lastHoldedPiecePosition = holdingPiecePos;
+    } else {
+      m_wasHoldingPiece = false;
     }
   }
 }

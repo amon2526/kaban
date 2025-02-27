@@ -1,6 +1,6 @@
 #include <input_handler.hpp>
 
-#include "board.hpp"
+#include "position.hpp"
 #include <game.hpp>
 #include <imgui.h>
 #include <imgui_internal.h>

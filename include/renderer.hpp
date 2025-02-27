@@ -2,13 +2,13 @@
 #define RENDERER_HPP
 
 #include <GLFW/glfw3.h>
-#include <board.hpp>
 #include <game.hpp>
 #include <glfw_wrapper.hpp>
 #include <imgui_wrapper.hpp>
 #include <layout_manager.hpp>
+#include <position.hpp>
 #include <unordered_map>
-
+#include <utility>
 
 class Renderer {
 public:
@@ -27,6 +27,13 @@ public:
   void toggleDemoWindow();
   bool windowShouldClose();
   void hookUpGame(Game *game);
+  void updateMousePosition() {
+    m_mousePos.first = ImGui::GetMousePos().x;
+    m_mousePos.second = ImGui::GetMousePos().y;
+  }
+  const std::pair<int, int>& getMousePosition() const {
+    return m_mousePos;
+  }
 
   LayoutManager *getLayoutManager();
 
@@ -48,9 +55,14 @@ private:
 
   std::unordered_map<Piece, GLuint> pieceTextures;
 
-  int m_lastTime = 0;
-  int m_deltaTime = 0;
-  int m_currentTime = 0;
+  std::pair<int, int> m_mousePos;
+
+  bool m_wasHoldingPiece = false;
+  std::pair<double, double> m_lastHoldedPiecePosition = {0, 0};
+
+  double m_lastTime = 0;
+  double m_deltaTime = 0;
+  double m_currentTime = 0;
   int m_menuWidth = 200;
   bool m_showDemoWindow = false;
 };

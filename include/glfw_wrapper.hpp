@@ -12,10 +12,12 @@ public:
   bool windowShouldClose();
   void setWindowShouldClose(bool value);
   void updateDimensions();
-  int getTime();
+  double getTime();
   void newFrame();
   void finishFrame();
   void fillFrame(double r, double g, double b, double a);
+  int getWidth() const { return m_display_w; };
+  int getHeight() const { return m_display_h; };
   GLFWwindow *getWindow() const;
 
 private:

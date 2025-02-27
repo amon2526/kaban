@@ -261,33 +261,6 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
-src/board.obj: src/board.cpp.obj
-.PHONY : src/board.obj
-
-# target to build an object file
-src/board.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/board.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban_lib.dir\build.make CMakeFiles/kaban_lib.dir/src/board.cpp.obj
-.PHONY : src/board.cpp.obj
-
-src/board.i: src/board.cpp.i
-.PHONY : src/board.i
-
-# target to preprocess a source file
-src/board.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/board.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban_lib.dir\build.make CMakeFiles/kaban_lib.dir/src/board.cpp.i
-.PHONY : src/board.cpp.i
-
-src/board.s: src/board.cpp.s
-.PHONY : src/board.s
-
-# target to generate assembly for a file
-src/board.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/board.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban_lib.dir\build.make CMakeFiles/kaban_lib.dir/src/board.cpp.s
-.PHONY : src/board.cpp.s
-
 src/error_handler.obj: src/error_handler.cpp.obj
 .PHONY : src/error_handler.obj
 
@@ -474,6 +447,33 @@ src/navigation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban_lib.dir\build.make CMakeFiles/kaban_lib.dir/src/navigation.cpp.s
 .PHONY : src/navigation.cpp.s
 
+src/position.obj: src/position.cpp.obj
+.PHONY : src/position.obj
+
+# target to build an object file
+src/position.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/position.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban_lib.dir\build.make CMakeFiles/kaban_lib.dir/src/position.cpp.obj
+.PHONY : src/position.cpp.obj
+
+src/position.i: src/position.cpp.i
+.PHONY : src/position.i
+
+# target to preprocess a source file
+src/position.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/position.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban_lib.dir\build.make CMakeFiles/kaban_lib.dir/src/position.cpp.i
+.PHONY : src/position.cpp.i
+
+src/position.s: src/position.cpp.s
+.PHONY : src/position.s
+
+# target to generate assembly for a file
+src/position.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban.dir\build.make CMakeFiles/kaban.dir/src/position.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kaban_lib.dir\build.make CMakeFiles/kaban_lib.dir/src/position.cpp.s
+.PHONY : src/position.cpp.s
+
 src/renderer.obj: src/renderer.cpp.obj
 .PHONY : src/renderer.obj
 
@@ -572,9 +572,6 @@ help:
 	@echo ... kaban
 	@echo ... kaban_lib
 	@echo ... tests
-	@echo ... src/board.obj
-	@echo ... src/board.i
-	@echo ... src/board.s
 	@echo ... src/error_handler.obj
 	@echo ... src/error_handler.i
 	@echo ... src/error_handler.s
@@ -596,6 +593,9 @@ help:
 	@echo ... src/navigation.obj
 	@echo ... src/navigation.i
 	@echo ... src/navigation.s
+	@echo ... src/position.obj
+	@echo ... src/position.i
+	@echo ... src/position.s
 	@echo ... src/renderer.obj
 	@echo ... src/renderer.i
 	@echo ... src/renderer.s
