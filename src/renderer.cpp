@@ -3,6 +3,7 @@
 #include <renderer.hpp>
 
 #include "position.hpp"
+#include "types.hpp"
 #include <GLFW/glfw3.h>
 #include <cstdint>
 #include <error_handler.hpp>
@@ -72,7 +73,7 @@ void Renderer::render() {
   ImGui::Separator();
   ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 10);
   ImGui::Text("Current turn: %s",
-              m_game->getTurn() == White ? "White" : "Black");
+              m_game->getTurn() == WHITE ? "White" : "Black");
   ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 10);
   std::string selectedPieceStr = "None";
   if (m_game->getSelectedPiece() != SQ_NONE) {
@@ -162,7 +163,7 @@ void Renderer::drawGame() {
 
   const Sector &boardSector = m_layoutManager.getSector("game");
   int squareSize = boardSector.width >> 3;
-  auto board = m_game->getBoard();
+  auto board = m_game->getMatrixBoard();
 
   for (uint8_t square = 0; square < 64; square++) {
 

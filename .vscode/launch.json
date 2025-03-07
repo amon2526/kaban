@@ -5,7 +5,7 @@
             "name": "Debug CMake Build",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/kaban.exe",
+            "program": "${workspaceFolder}/bin/debug/kaban.exe",
             "cwd": "${workspaceFolder}",
             "MIMode": "gdb",
             "externalConsole": true,
@@ -15,7 +15,7 @@
                     "ignoreFailures": true
                 }
             ],
-           "preLaunchTask": "CMake: build"
+           "preLaunchTask": "build debug"
         }
     ]
 }

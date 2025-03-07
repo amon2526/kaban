@@ -1,4 +1,0 @@
-NavigationTest.TurnPos1 4 0.00933813
-NavigationTest.TurnPos 10 0.0440921
-AllTests 0 0
----

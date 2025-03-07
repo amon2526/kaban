@@ -1,3 +1,5 @@
+#include "constants.hpp"
+#include "types.hpp"
 #include <position.hpp>
 
 #include <array>
@@ -5,6 +7,7 @@
 #include <error_handler.hpp>
 #include <sstream>
 #include <string>
+#include <vector>
 
 bool Bitboard::isSet(uint8_t square) const {
   return (_value & (1ULL << square)) != 0;
@@ -78,20 +81,53 @@ Piece Position::getPiece(uint8_t source) const {
   return EMPTY;
 }
 
-std::array<std::array<Piece, 8>, 8> Position::getBoard() const {
-  std::array<std::array<Piece, 8>, 8> board;
-  for (uint8_t row = 0; row < 8; row++) {
-    for (uint8_t col = 0; col < 8; col++) {
-      board[row][col] = getPiece((Square)(row * 8 + col));
-    }
-  }
-  return board;
-}
-
 void Position::makeMove(const Move &move) {
   setPiece(move.to, getPiece(move.from));
   unsetPiece(move.from);
-  //m_Turn = !m_Turn;
+  // m_Turn = !m_Turn;
 }
 
 void Position::unmakeMove() {}
+
+void Position::updateExternalData() {
+  if (m_isExternalDataDirty) {
+    // update matrix board
+    for (uint8_t row = 0; row < 8; row++) {
+      for (uint8_t col = 0; col < 8; col++) {
+        m_matrixBoard[row][col] = getPiece((Square)(row * 8 + col));
+      }
+    }
+    // update moves
+    // ADD
+    m_isExternalDataDirty = false;
+  }
+}
+
+const std::array<std::array<Piece, 8>, 8> &Position::getMatrixBoard() {
+  updateExternalData();
+  return m_matrixBoard;
+}
+
+const std::vector<Move> &Position::getPossibleMoves() {
+  updateExternalData();
+  return m_possibleMoves;
+}
+
+/*const std::vector<Move>& generateMoveMap() {
+  std::vector<Move> moveMap;
+  moveMap.reserve(MAX_MOVES);
+  //generatePawnMoves();
+};*/
+
+/*int Position::countMoves(uint8_t depth) {
+  int total = 0;
+  const bool leaf = (depth == 2);
+  for (const auto &move : generateMoveMap()) {
+    if (depth == 1)
+      m_position.makeMove(m_moveMap[i]);
+    totalMoves += countMoves(depth - 1);
+    m_position.unmakeMove();
+  }
+  m_moveMap.PopArray();
+  return totalMoves;
+};*/

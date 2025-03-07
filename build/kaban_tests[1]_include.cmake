@@ -1,5 +1,0 @@
-if(EXISTS "C:/Users/Ivan/source/code/kaban/build/kaban_tests[1]_tests.cmake")
-  include("C:/Users/Ivan/source/code/kaban/build/kaban_tests[1]_tests.cmake")
-else()
-  add_test(kaban_tests_NOT_BUILT kaban_tests_NOT_BUILT)
-endif()

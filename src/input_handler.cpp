@@ -1,6 +1,5 @@
 #include <input_handler.hpp>
 
-#include "position.hpp"
 #include <game.hpp>
 #include <imgui.h>
 #include <imgui_internal.h>
@@ -45,7 +44,7 @@ void InputHandler::handleInput() {
     m_renderer->shutdown();
   }
   if (ImGui::IsKeyPressed(ImGuiKey_X)) {
-    m_game->test();
+    //m_game->test();
   }
   if (ImGui::IsKeyPressed(ImGuiKey_F)) {
     m_renderer->toggleDemoWindow();

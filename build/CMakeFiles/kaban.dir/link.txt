@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\kaban.dir/objects.a
-C:\Programs\mingw64\bin\ar.exe qc CMakeFiles\kaban.dir/objects.a @CMakeFiles\kaban.dir\objects1.rsp
-C:\Programs\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\kaban.dir/objects.a -Wl,--no-whole-archive -o kaban.exe -Wl,--out-implib,libkaban.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\kaban.dir\linkLibs.rsp

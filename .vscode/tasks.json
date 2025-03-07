@@ -2,20 +2,30 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build all",
+            "label": "build debug",
             "type": "shell",
-            "command": "cmake ; cmake --build build"
+            "command": "cmake --build --preset debug",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         },
         {
-            "label": "build and run tests",
+            "label": "build release",
             "type": "shell",
-            "command": "cmake ; cmake --build build ; ./build/tests.exe"
+            "command": "cmake --build --preset release"
         },
         {
-            "label": "build and run app",
+            "label": "build debug test",
             "type": "shell",
-            "command": "cmake ; cmake --build build ; ./build/kaban.exe"
+            "command": "cmake --build --preset debug"
         },
+        {
+            "label": "build debug test",
+            "type": "shell",
+            "command": "cmake --build --preset release"
+        }
     ]
 }
 

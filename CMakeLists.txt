@@ -1,29 +1,31 @@
-cmake_minimum_required(VERSION 3.26.3)
+cmake_minimum_required(VERSION 3.26)
 
-set(CMAKE_TOOLCHAIN_FILE "D:/Programs/VisualStudio/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
-set(VCPKG_TARGET_TRIPLET "x64-mingw-static" CACHE STRING "Vcpkg triplet")
-set(CMAKE_PREFIX_PATH "D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/share")
+set(PROJECT_NAME "kaban")
+set(APP_LIB_NAME "kaban_lib")
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_TOOLCHAIN_FILE "C:/Tools/vcpkg/scripts/buildsystems/vcpkg.cmake")
+set(VCPKG_TARGET_TRIPLET "x64-mingw-static")
+set(CMAKE_PREFIX_PATH "C:/Tools/vcpkg/installed/x64-mingw-static/share")
 
-project(kaban)
+project(${PROJECT_NAME})
 
 include(FetchContent)
 FetchContent_Declare(
     googletest
-    URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+    URL https://github.com/google/googletest/archive/refs/tags/v1.16.0.zip
 )
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+set(gtest_force_shared_crt ON CACHE STRING "" FORCE)
 FetchContent_MakeAvailable(googletest)
-
+option(BUILD_TESTS "Build tests" OFF)
 enable_testing()
 
+
+file(GLOB_RECURSE APP_MAIN "src/main.cpp")
 file(GLOB_RECURSE APP_SOURCES "src/*.cpp")
-message(${APP_SOURCES})
+list(REMOVE_ITEM APP_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp")
 file(GLOB_RECURSE TESTS_SOURCES "tests/*.cpp")
-file(GLOB_RECURSE APP_SOURCES_WITHOUT_MAIN "src/*.cpp")
-list(REMOVE_ITEM APP_SOURCES_WITHOUT_MAIN "${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp")
+
+set(NECESSARY_LIBS OpenGL::GL glfw imgui::imgui)
 
 find_package(OpenGL REQUIRED)
 find_package(glfw3 CONFIG REQUIRED)
@@ -31,22 +33,20 @@ find_package(imgui CONFIG REQUIRED)
 find_package(Stb REQUIRED)
 
 
-add_executable(${PROJECT_NAME} ${APP_SOURCES})
-target_include_directories(${PROJECT_NAME} PRIVATE include)
-target_include_directories(${PROJECT_NAME} PRIVATE "D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/include")
-target_link_libraries(${PROJECT_NAME} PRIVATE OpenGL::GL glfw imgui::imgui)
+include_directories(include)
+include_directories("C:/Tools/vcpkg/installed/x64-mingw-static/include")
 
 
-add_library(kaban_lib STATIC ${APP_SOURCES_WITHOUT_MAIN})
-target_include_directories(kaban_lib PRIVATE include)
-target_include_directories(kaban_lib PRIVATE "D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/include")
-target_link_libraries(kaban_lib PRIVATE OpenGL::GL glfw imgui::imgui)
+add_library(${APP_LIB_NAME} STATIC ${APP_SOURCES})
+target_link_libraries(${APP_LIB_NAME} PRIVATE ${NECESSARY_LIBS})
 
 
-add_executable(tests EXCLUDE_FROM_ALL ${TESTS_SOURCES})
-target_include_directories(tests PRIVATE include)
-target_include_directories(tests PRIVATE "D:/Programs/VisualStudio/vcpkg/installed/x64-mingw-static/include")
-target_link_libraries(tests PRIVATE kaban_lib OpenGL::GL glfw imgui::imgui GTest::gtest GTest::gtest_main)
+add_executable(${PROJECT_NAME} ${APP_MAIN})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${APP_LIB_NAME} ${NECESSARY_LIBS})
+
+
+add_executable(tests ${TESTS_SOURCES})
+target_link_libraries(tests PRIVATE ${APP_LIB_NAME} ${NECESSARY_LIBS} GTest::gtest GTest::gtest_main)
 
 include(GoogleTest)
 gtest_discover_tests(tests)
